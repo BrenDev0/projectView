@@ -10,37 +10,33 @@
     <title>Sign Up</title>
 </head>
 <body id="signup-body">
-    <header class="header">
+    <header class="header h-con-end">
         <h1>ProjectView.</h1>
     </header>
     <main id="signup-main">
         <div id="demo"></div>
-        <div id="mobile-landing">
+        <div class="v-con-center full" id="mobile-landing">
             <button>Sign Up</button>
             <button>Sign In</button>
         </div>
-        <div class="signup-form-con">
-            <form action="" id="signup-form">
+        <div class="signup-form-con h-con-center full">
+            <form action="" class="v-con-center" id="signup-form">
                 <h2>Sign Up</h2>
-                <div class="form-elements">
+                <div class="form-elements v-con">
                     <label for="email">Email</label>
-                    <input required type="email" autocomplete="off" id="email">
+                    <input required type="email" autocomplete="off" id="email" placeholder="Enter your email">
                 </div>
-                <div class="form-elements">
+                <div class="form-elements v-con">
                     <label for="password">Password</label>
-                    <input required type="text" autocomplete="off" id="password">
+                    <input required type="text" autocomplete="off" id="password" placeholder="Eneter your password">
                 </div>
-                <div class="form-elements">
+                <div class="form-elements v-con">
                     <label for="verify">Re-Enter Password</label>
-                    <input required type="text" autocomplete="off" id="verify">
+                    <input required type="text" autocomplete="off" id="verify" placeholder="Re-enter password">
                 </div>
+                <button class="button" id="signup-button">Sign Up</button>
+                <span class="h-con-center wide">Already have an account?<a id="signin-link" href="">Sign In.</a></span>
             </form>
         </div>
     </main>
-    
-
-    
-
-    
-
 </html>
