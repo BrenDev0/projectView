@@ -1,82 +1,91 @@
-#signup-page {
+:root{
+--font: whitesmoke;
+--dark-blue: #152733
+
+}
+
+#signup-body{
     background-image: url('../photos/laptop.jpg.jpg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    color: whitesmoke
 }
 
-#banner {
+.header{
     width: 100%;
-    height: 5%;
+    height: 10%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header h1{
+    margin-right: 20px;
     padding: 5px;
-    color: whitesmoke;
+    color: var(--font);
 }
 
-#signup-main {
+#signup-main{
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
-
-
-.demo {
+#demo{
     display: none;
-    width: 50%;
-    height: 100%;
 }
 
-.mobile-landing {
+#mobile-landing{
     width: 100%;
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
 }
 
-.mobile-landing button {
+#mobile-landing button{
+    width: 50%;
+    height: 5%;
     margin: 10px;
-    background-color: transparent;
+    padding: 5px;
     border-radius: 5px;
-    border: 2px solid whitesmoke;
-    color: whitesmoke;
+    background: rgba(21, 39, 51, .9);
+    border-color: var(--font);
+    color: var(--font);
+    font-weight: 400;
 }
 
-.form-container {
+.signup-form-con{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid green;
-    background-color: #3c4d57
+    background: var(--dark-blue);
 }
 
-.signup-form {
-    width: 80%;
-    height: 50%;
-    padding: 20px;
+#signup-form{
+    width: 90%;
+    height: 75%;
+    border-radius: 5px;
+    background-color: #818b94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-elements{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    background-color: whitesmoke;
-    border-radius: 7px;
-    
+    align-items: left;
+    margin: 20px;
 }
 
-.form-elements {
-    display: flex;
-    flex-direction: column;
+.form-elements input{
+    border-radius: 5px;
+    height: 30px;
 }
-
-.form-elements input {
-    border-radius: 5px
-}
-
 
 

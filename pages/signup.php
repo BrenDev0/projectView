@@ -9,38 +9,38 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <title>Sign Up</title>
 </head>
-<body>
-    <div id="signup-page">
-        <header id="banner">
-            <h1>ProjectView.</h1>
-        </header>
-        <main id="signup-main">
-            <div class="demo"></div>
-            <div class="mobile-landing">
-                <button>
-                    <a href="#form">Sign UP</a>
-                </button>
-                <button>Sign Up</button>
-            </div>
-            <div class="form-container">
-                <form class="signup-form" id="form" action="">
-                    <h2>Sign Up</h2>
-                    <div class="form-elements">
-                        <label for="email">Email</label>
-                        <input name="email" required type="email" id="email" autocomplete="off">
-                    </div>
-                    <div class="form-elements">
-                        <label for="password">Password</label>
-                        <input name="password" required type="text" id="password">
-                    </div>
-                    <div class="form-elements">
-                        <label for="verify">Re-Enter Password</label>
-                        <input name="verify" required type="text" id="verify">
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
-        </main>
-    </div>
-</body>
+<body id="signup-body">
+    <header class="header">
+        <h1>ProjectView.</h1>
+    </header>
+    <main id="signup-main">
+        <div id="demo"></div>
+        <div id="mobile-landing">
+            <button>Sign Up</button>
+            <button>Sign In</button>
+        </div>
+        <div class="signup-form-con">
+            <form action="" id="signup-form">
+                <h2>Sign Up</h2>
+                <div class="form-elements">
+                    <label for="email">Email</label>
+                    <input required type="email" autocomplete="off" id="email">
+                </div>
+                <div class="form-elements">
+                    <label for="password">Password</label>
+                    <input required type="text" autocomplete="off" id="password">
+                </div>
+                <div class="form-elements">
+                    <label for="verify">Re-Enter Password</label>
+                    <input required type="text" autocomplete="off" id="verify">
+                </div>
+            </form>
+        </div>
+    </main>
+    
+
+    
+
+    
+
 </html>
