@@ -1,11 +1,5 @@
-:root{
---font: whitesmoke;
---dark-blue: #152733
-
-}
-
 #signup-body{
-    background-image: url('../photos/laptop.jpg.jpg');
+    background-image: url('../photos/mobile-singup-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -31,6 +25,10 @@
     display: none;
 }
 
+#demo-p {
+    color: var(--font);
+}
+
 #mobile-landing button{
     width: 50%;
     height: 5%;
@@ -43,8 +41,8 @@
     font-weight: 500;
 }
 
-.signup-form-con{
-    background-color: #818b94;
+#signup-form-con{
+    background-color: var(--grey);
 }
 
 #signup-form{
@@ -73,7 +71,7 @@
     width: 35%;
     height: 40px;
     margin: 25px 0 50px 0;
-    background-color: #818b94;
+    background-color: var(--grey);
     color: var(--dark-blue);
     font-weight: 500;
     border-radius: 5px;
@@ -87,4 +85,28 @@
 
 
 
+@media screen and (min-width:900px) {
+    #mobile-landing {
+        display: none;
+    }
+
+    #signup-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #demo {
+        display: flex;
+        width: 45%;
+        
+
+    }
+
+    #signup-form-con{
+        background: 0;
+       width: 45%;
+    }
+
+}
 
