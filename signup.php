@@ -1,4 +1,4 @@
 <?php
-require ('./requires/html_head.php');
-include ('./pages/signupPage.php');
+require ('./require/templates/html_head.php');
+include ('./require/pages/signupPage.php');
 ?>

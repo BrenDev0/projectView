@@ -1,7 +1,8 @@
 #signup-body{
     background-image: url('../photos/mobile-singup-background.jpg');
-    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .header{
@@ -86,6 +87,7 @@
 
 
 @media screen and (min-width:900px) {
+   
     #mobile-landing {
         display: none;
     }
@@ -107,6 +109,12 @@
         background: 0;
        width: 45%;
     }
+
+    .form-elements{
+        margin: 5px
+    }
+
+  
 
 }
 
