@@ -6,10 +6,11 @@
         <div class="h-con ha-center va-center" id="demo">
             <p id="demo-p">Demo Video w/ description</p>
         </div>
-        <div class="v-con va-center ha-center full" id="mobile-landing">
-            <button>Sign Up</button>
-            <button>Sign In</button>
-        </div>
+        <form action="submit" class="v-con va-center ha-center full" id="mobile-landing">
+            <input type="submit" value="Sign Up">
+            <input type="button" value="Sign In">
+        </form>
+        <form action=""></form>
         <div class="h-con ha-center va-center full" id="signup-form-con">
             <form action="" class="v-con va-center ha-center" id="signup-form">
                 <h2>Sign Up</h2>

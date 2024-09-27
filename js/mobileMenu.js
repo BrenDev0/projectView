@@ -1,9 +1,20 @@
-export const mobileMenu = () =>{
-    const button = document.getElementById('menu-button');
+const openButton = document.getElementById('menu-button');
+    const closeButton = document.getElementById('mobile-menu-close-btn')
+    const menu = document.getElementById('nav-con')
 
-    button.addEventListener("click", handleMobileMenu)
+    // Open mobile menu
+    const openMobileMenu = () => {
+    
+        menu.style.top = '0';
+        return;
+    }
 
-   const  handleMobileMenu = () => {
-    button.style.top == '-100%' ? button.style.top = '0' : button.style.top = '-100%';
-   }
-}
+    // Close mobile menu
+    const closeMobileMenu = () => {
+
+        menu.style.top = '-100%';
+        return;
+    }
+
+    openButton.addEventListener('click', openMobileMenu)
+    closeButton.addEventListener('click', closeMobileMenu)
