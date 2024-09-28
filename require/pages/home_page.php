@@ -5,7 +5,7 @@
         <i class="fas fa-bars"></i>
     </button>
    </header>
-   <main class="full">
+   <main id="home-main">
    <?php 
     require('./require/templates/mobile_nav.php');
     require('./require/templates/nav_bar.php');
@@ -17,24 +17,28 @@
         <input type="button" value="toolbar">
     </div>
     <div class="h-con ha-center va-center full" id="new-project-modal">
-        <form  action="submit">
-            <div>
+        <form class="v-con va-center ha-center" action="submit">
+            <h2>Create a New Project</h2>
+            <div class="v-con ha-center form-elements">
+                <label for="">Project Name</label>
+                <input type="text">
+            </div>
+            <div class="v-con ha-center form-elements">
                 <label for="">label</label>
                 <input type="text">
             </div>
-            <div>
+            <div class="v-con ha-center form-elements">
                 <label for="">label</label>
                 <input type="text">
             </div>
-            <div>
+            <div class="v-con ha-center form-elements">
                 <label for="">label</label>
                 <input type="text">
             </div>
-            <div>
-                <label for="">label</label>
-                <input type="text">
+            <div class="h-con ha-end va-center wide modal-form-btn-con">
+                <button>Create</button>
+                <button>Cancel</button>
             </div>
-
         </form>
     </div>
     <div>
