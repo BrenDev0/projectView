@@ -83,37 +83,7 @@
    </main> 
 </body>
 
-<script>
-    // Mobile menu operation
-    const openButton = document.getElementById('menu-button');
-    const closeButton = document.getElementById('mobile-menu-close-btn')
-    const menu = document.getElementById('nav-con')
+<script src="./js/mobileMenu.js" ></script> 
 
-    // Open mobile menu
-    const openMobileMenu = () => {
-    
-        menu.style.top = '0';
-        return;
-    }
 
-    // Close mobile menu
-    const closeMobileMenu = () => {
-
-        menu.style.top = '-100%';
-        return;
-    }
-
-    openButton.addEventListener('click', openMobileMenu)
-    closeButton.addEventListener('click', closeMobileMenu)
-
-    // Mobile modals
-    function handleModal(action, modalId){
-        console.log(modalId)
-        const modal = document.getElementById(modalId)
-        action === 'OPEN' ? modal.style.left = "0" : modal.style.left = "-100%"
-    }
-
-    const newProjectBtn = document.getElementById('new-project-btn')
-    newProjectBtn.addEventListener('click', () => handleModal('OPEN', 'new-project-modal'))
-</script>
 </html>

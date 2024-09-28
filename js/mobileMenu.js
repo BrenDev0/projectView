@@ -3,18 +3,10 @@ const openButton = document.getElementById('menu-button');
     const menu = document.getElementById('nav-con')
 
     // Open mobile menu
-    const openMobileMenu = () => {
-    
-        menu.style.top = '0';
+    const handleMobileMenu = (action) => {
+        action === 'OPEN' ? menu.style.top = '0' :  menu.style.top = '-100%';
         return;
     }
 
-    // Close mobile menu
-    const closeMobileMenu = () => {
-
-        menu.style.top = '-100%';
-        return;
-    }
-
-    openButton.addEventListener('click', openMobileMenu)
-    closeButton.addEventListener('click', closeMobileMenu)
+    openButton.addEventListener('click', () => handleMobileMenu('OPEN'));
+    closeButton.addEventListener('click', () => handleMobileMenu('CLOSE'))
