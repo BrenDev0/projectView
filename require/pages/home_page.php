@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php
+require ('../require/templates/html_head.php')
+?>
 <body id="home-body">
    <header class="h-con">
     <h1>ProjectView.</h1>
@@ -7,8 +12,8 @@
    </header>
    <main id="home-main">
    <?php 
-    require('./require/templates/mobile_nav.php');
-    require('./require/templates/nav_bar.php');
+    require('../require/templates/mobile_nav.php');
+    require('../require/templates/nav_bar.php');
     ?>
     <div class="h-con" id="tool-bar">
         <input id="new-project-btn" type="button" value="New Project">
@@ -82,8 +87,5 @@
     </div>
    </main> 
 </body>
-
-<script src="./js/mobileMenu.js" ></script> 
-
-
+<script type="module" src="../js/index.js"></script>
 </html>

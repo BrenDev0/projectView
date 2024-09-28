@@ -1,4 +1,5 @@
-const openButton = document.getElementById('menu-button');
+export const mobileMenu = () => {
+    const openButton = document.getElementById('menu-button');
     const closeButton = document.getElementById('mobile-menu-close-btn')
     const menu = document.getElementById('nav-con')
 
@@ -10,3 +11,5 @@ const openButton = document.getElementById('menu-button');
 
     openButton.addEventListener('click', () => handleMobileMenu('OPEN'));
     closeButton.addEventListener('click', () => handleMobileMenu('CLOSE'))
+    return;
+}
