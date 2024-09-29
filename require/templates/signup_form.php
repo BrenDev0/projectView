@@ -3,7 +3,7 @@
                 <?php
                     if (isset($_SESSION['error'])){
                         $error = $_SESSION['error'];
-                        echo "<p style='color: red'>$error</p>";
+                        echo "<p style='color: red; text-align: center'>$error</p>";
                         unset($_SESSION['error']);
                     }
                 ?>
@@ -24,5 +24,5 @@
                     <input name="verify" required type="password" autocomplete="off" id="verify" placeholder="re-enter password">
                 </div>
                 <button class="button" type="submit" id="signup-button">Sign Up</button>
-                <span class="h-con ha-center va-center wide">Already have an account?<a id="signin-link" href="">Sign In.</a></span>
+                <span class="h-con ha-center va-center wide">Already have an account?<a id="signin-link" href="signin.php">Sign In.</a></span>
             </form>

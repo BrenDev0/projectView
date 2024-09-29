@@ -12,9 +12,9 @@ require ('../require/templates/html_head.php')
         <div class="h-con ha-center va-center" id="demo">
             <p id="demo-p">Demo Video w/ description</p>
         </div>
-        <form method="post" class="v-con va-center ha-center full" id="mobile-landing">
-            <input type="submit" value="Sign Up">
-            <input type="button" value="Sign In">
+        <form method="post" action="signin.php" class="v-con va-center ha-center full" id="mobile-landing">
+            <a class="h-con ha-center va-center" href="#signup-form">Sign Up</a>
+            <button type="submit">Sign In</button>
         </form>
         <form method="post"></form>
         <div class="h-con ha-center va-center full" id="signup-form-con">

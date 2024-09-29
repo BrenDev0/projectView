@@ -1,9 +1,3 @@
-
-#home-body{
-    background-color: var(--dark-blue);
-    color: var(--font)
-}
-
 #home-body header{
     height: 17%;
     padding:7px;
