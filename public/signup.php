@@ -26,7 +26,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
         ));
 
         // Redirect
-        $_SESSION['auth'] = True;
+        $_SESSION['auth'] = "Success";
         header('location: index.php');
         return;
         }

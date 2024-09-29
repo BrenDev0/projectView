@@ -9,19 +9,19 @@
                 ?>
                 <div class="form-elements v-con">
                     <label for="name">Name</label>
-                    <input name="name"required type="text" autocomplete="off" id="email" placeholder="Enter your email">
+                    <input name="name"required type="text" autocomplete="off" id="email" placeholder="enter your name">
                 </div>
                 <div class="form-elements v-con">
                     <label for="email">Email</label>
-                    <input name="email"required type="email" autocomplete="off" id="email" placeholder="Enter your email">
+                    <input name="email"required type="email" autocomplete="off" id="email" placeholder="enter your email">
                 </div>
                 <div class="form-elements v-con">
                     <label for="password">Password</label>
-                    <input name="password" required type="password" autocomplete="off" id="password" placeholder="Eneter your password">
+                    <input name="password" required type="password" autocomplete="off" id="password" placeholder="enter your password">
                 </div>
                 <div class="form-elements v-con">
                     <label for="verify">Re-Enter Password</label>
-                    <input name="verify" required type="password" autocomplete="off" id="verify" placeholder="Re-enter password">
+                    <input name="verify" required type="password" autocomplete="off" id="verify" placeholder="re-enter password">
                 </div>
                 <button class="button" type="submit" id="signup-button">Sign Up</button>
                 <span class="h-con ha-center va-center wide">Already have an account?<a id="signin-link" href="">Sign In.</a></span>
