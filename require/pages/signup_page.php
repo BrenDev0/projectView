@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+// HTML head 
 require ('../require/templates/html_head.php')
 ?>
 <body id="signup-body">
@@ -18,6 +19,7 @@ require ('../require/templates/html_head.php')
         <form method="post"></form>
         <div class="h-con ha-center va-center full" id="signup-form-con">
             <?php
+                // Signup form 
                 require ('../require/templates/signup_form.php')
             ?>  
         </div>

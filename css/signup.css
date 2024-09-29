@@ -116,7 +116,11 @@
 
     #signup-form-con{
         background: 0;
-       width: 45%;
+        width: 45%;
+    }
+
+    #signup-form{
+        height: 95%;
     }
 
     .form-elements{
