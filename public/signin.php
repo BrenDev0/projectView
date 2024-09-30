@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../config/database.php';
+require '../private/config/database.php';
 // Check if all data is entered
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])){
     // Get user from database
@@ -35,5 +35,5 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 }
 
 // View
-require '../require/pages/signin_page.php';
+require '../private/include/pages/signin_page.php';
 ?>

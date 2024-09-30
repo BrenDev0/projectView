@@ -1,5 +1,5 @@
 <?php
-require_once ('../config/database.php');
+require '../private/config/database.php';
 
 // Add user //
 
@@ -55,5 +55,5 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
 }
 
 // View
-include ('../require/pages/signup_page.php');
+require '../private/include/pages/signup_page.php';
 ?>

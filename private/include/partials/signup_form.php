@@ -1,4 +1,4 @@
-<form method="post" class="v-con va-center ha-center" id="signup-form">
+<form method="POST" class="v-con va-center ha-center" id="signup-form">
                 <h2>Sign Up</h2>
                 <?php
                     if (isset($_SESSION['error'])){

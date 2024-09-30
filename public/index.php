@@ -1,5 +1,5 @@
 <?php
-require ('../config/database.php');
+require '../private/config/database.php';
 session_start();
 if (! isset($_SESSION['auth'])) {
     $_SESSION['error'] = 'Please sign in';
@@ -7,5 +7,5 @@ if (! isset($_SESSION['auth'])) {
     return;
 }
 // View
-require ('../require/pages/home_page.php');
+require '../private/include/pages/home_page.php';
 ?>

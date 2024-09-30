@@ -116,4 +116,29 @@ body {
     height: 100px
 }
 
+/* Mobile header */
+
+#mobile-header{
+    height: 15%;
+    padding:7px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mobile-header h1{
+    margin-left: 10px;
+    font-size: 1.6rem;
+}
+
+#menu-button{
+    width: 15%;
+    height: 65%;
+    color: var(--dark-blue);
+    background: var(--grey);
+    border: 0;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-right: 12px;
+}
+
 

@@ -2,12 +2,12 @@
 <html lang="en">
 <?php
 // HTML head 
-require ('../require/templates/html_head.php')
+include ('../private/include/partials/html_head.php')
 ?>
 <body id="signup-body">
-    <header class="header h-con va-center ha-end">
-        <h1>ProjectView.</h1>
-    </header>
+    <?php
+    include '../private/include/partials/dt_header.php'
+    ?>
     <main id="signup-main">
         <div class="h-con ha-center va-center" id="demo">
             <p id="demo-p">Demo Video w/ description</p>
@@ -19,8 +19,8 @@ require ('../require/templates/html_head.php')
         <form method="post"></form>
         <div class="h-con ha-center va-center full" id="signup-form-con">
             <?php
-                // Signup form 
-                require ('../require/templates/signup_form.php')
+            // Signup form 
+            include '../private/include/partials/signup_form.php'
             ?>  
         </div>
     </main>

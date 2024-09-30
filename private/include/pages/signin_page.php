@@ -2,12 +2,12 @@
 <html lang="en">
 <?php
 // HTML head
-require ('../require/templates/html_head.php')
+include ('../private/include/partials/html_head.php')
 ?>
 <body>
-   <header class="header h-con va-center ha-end">
-        <h1>ProjectView.</h1>
-   </header>
+   <?php
+   include '../private/include/partials/dt_header.php'
+   ?>
    <main class="h-con ha-center va-center" id="signin-main">
       <form class="v-con va-center ha-center" method="post"  id="signin-form">
          <h2>Welcome Back!</h2>
