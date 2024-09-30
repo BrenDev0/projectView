@@ -1,5 +1,6 @@
 <?php
 require '../private/config/database.php';
+require '../private/classes/Auth.php';
 
 // Add user //
 
@@ -46,9 +47,8 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Redirect
-            $_SESSION['auth'] = True;
-            $_SESSION['account'] = $row['user_id'];
-            header('location: index.php');
+            $auth = new Auth();
+            $auth->set_session_data($row['user_id']);
             return;
         }
     }

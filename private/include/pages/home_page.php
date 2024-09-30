@@ -21,13 +21,13 @@ include '../private/include/partials/html_head.php';
     <?php
     // New project modal
     include '../private/include/partials/new_project_modal.php';
+    include '../private/include/partials/new_idea_modal.php';
     // Recent projects component
     include '../private/include/partials/recent_projects_table.php'
     ?>
-    <div>
-        side by side
-        <p>link to new project form</p>
-        <p>link to new idea form</p>
+    <div class="h-con va-center" id="dashboard-elements-con">
+        <div class="dashboard-element"></div>
+        <div class="dashboard-element"></div>
     </div>
    </main> 
 </body>

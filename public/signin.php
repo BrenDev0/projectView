@@ -1,6 +1,8 @@
 <?php
-session_start();
 require '../private/config/database.php';
+require '../private/classes/Auth.php';
+
+session_start();
 // Check if all data is entered
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])){
     // Get user from database
@@ -21,9 +23,8 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
                 return;
             } else{
                 // login
-                $_SESSION['account'] = $row['user_id'];
-                $_SESSION['auth'] = True;
-                header('location: index.php');
+                $auth = new Auth();
+                $auth->set_session_data($row['user_id']);
                 return;
             }
         }

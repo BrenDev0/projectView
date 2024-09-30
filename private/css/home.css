@@ -20,7 +20,7 @@
     color: var(--dark-blue);
 }
 
-#new-project-modal{
+#new-project-modal, #new-idea-modal{
     position: absolute;
     top: 0;
     left: -100%;
@@ -28,7 +28,7 @@
     transition: ease-in-out 1.2s;
 }
 
-#new-project-modal form{
+#new-project-modal form, #new-idea-modal form{
     width: 90%;
     height: 80%;
     background-color: var(--dark-blue);
@@ -39,6 +39,18 @@
     margin-bottom: 50px;
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+#new-idea-modal form h2{
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 500; 
+}
+
+#new-idea-modal form select{
+    height: 40px;
+    border-radius: 5px;
+    color: var(--dark-blue);
 }
 
 .modal-form-btn-con{
@@ -63,6 +75,8 @@
 }
 
 #recent-projects-table{
+    width: 100%;
+    height: 45%;
     padding: 7px; 
 }
 
@@ -81,4 +95,17 @@
     padding: 7px;
     border-bottom: 1px solid var(--grey);
     text-align: left;
+}
+
+#dashboard-elements-con{
+    width: 100%;
+    height: 47%;
+    justify-content: space-around;
+}
+
+.dashboard-element{
+    width: 45%;
+    height: 85%;
+    border-radius: 7px;
+    background: var(--grey) ;
 }
