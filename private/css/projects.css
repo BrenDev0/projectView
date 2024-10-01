@@ -1,0 +1,43 @@
+#projects-table-con{
+    width: 100%;
+}
+
+#projects-table-con table{
+    width: 95%;
+    border-radius: 7px;
+    border-collapse: collapse;
+    
+}
+
+#projects-table-con table thead tr{
+    background-color: var(--dark-blue);
+}
+
+#projects-table-con table tr{
+    background: var(--grey);
+}
+
+#projects-table-con table td ,#projects-table-con table th{
+    text-align: left;
+    height: 50px;
+    border-bottom: 1px solid var(--dark-blue);
+    
+}
+
+#projects-table-con table td button{
+    width: 30px;
+    height: 30px;
+    background: 0;
+    border-radius: 100%;
+}
+
+#projects-table-con table .hidden{
+    background: var(--dark-blue)
+
+}
+
+#projects-table-con table .hidden td{
+    border-bottom: 1px dashed var(--grey)
+}
+
+
