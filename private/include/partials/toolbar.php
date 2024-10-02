@@ -3,4 +3,4 @@
         <button id="new-idea-btn">New Idea</button>
         <button>toolbar</button>
         <button>toolbar</button>
-    </div>
+</div>

@@ -25,13 +25,12 @@
 }
 
 #projects-table-con table td button{
-    width: 30px;
-    height: 30px;
+    border: 0;
     background: 0;
-    border-radius: 100%;
 }
 
 #projects-table-con table .hidden{
+    display: none;
     background: var(--dark-blue)
 
 }

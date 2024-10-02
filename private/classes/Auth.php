@@ -15,6 +15,7 @@ class Auth{
         $_SESSION['auth'] = True;
         $_SESSION['account'] = $account;
         header('location: index.php');
+        return;
     }
 }
 ?>
