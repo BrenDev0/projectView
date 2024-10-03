@@ -21,5 +21,7 @@ require '../private/include/partials/html_head.php'
     ?>
    </main>
 </body>
-<script type="module" src="../private/js/index.js"></script>
+<?php
+   require '../private/include/partials/script.php'
+   ?>
 </html>

@@ -24,5 +24,7 @@ include '../private/include/partials/html_head.php';
     </div>
    </main> 
 </body>
-<script type="module" src="../private/js/index.js"></script>
+<?php
+require '../private/include/partials/script.php'
+?>
 </html>

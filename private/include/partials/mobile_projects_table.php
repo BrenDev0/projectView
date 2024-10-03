@@ -13,10 +13,11 @@
             $stmt = $conn->query($sql);
 
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $project = $row['project_id'];
                 $project_name = $row['name'];
-                $project_row = "<tr>
+                $project_row = "<tr class='project-rows' id='$project'>
                 <td>
-                    <button><i class='fas fa-chevron-circle-right'></i></button>
+                    <button class='show-rows'><i class='fas fa-chevron-circle-right'></i></button>
                     <span>$project_name</span>
                 </td>
                 <td>54</td>
@@ -27,13 +28,12 @@
                 echo $project_row;
 
                 // Get parts to every project
-                $project = $row['project_id'];
                 $parts_sql = $parts_sql = "SELECT * FROM parts WHERE project = $project";
                 $parts_stmt = $conn->query($parts_sql);
 
                 while($parts_row = $parts_stmt->fetch(PDO::FETCH_ASSOC)){
                     $part_name = $parts_row['name'];
-                    $sub_row = "<tr class='hidden'>
+                    $sub_row = "<tr class='sub-row hidden' data-project='$project'>
                     <td>$part_name</td>
                     <td>12</td>
                     <td>20%</td>

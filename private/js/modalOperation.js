@@ -25,4 +25,5 @@ export const activateModals = () => {
         handleModal('new-idea-modal', CLOSE);
     });
 
+    return;
 }

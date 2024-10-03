@@ -24,19 +24,28 @@
     
 }
 
-#projects-table-con table td button{
-    border: 0;
+#projects-table-con table tr button{
+    width: 30px;
+    height: 30px;
+    border: 1px solid green;
     background: 0;
+    cursor: pointer;
 }
 
 #projects-table-con table .hidden{
     display: none;
-    background: var(--dark-blue)
+    transition: ease-in-out 2s;
+}
+
+#projects-table-con table .sub-row{
+    background: var(--dark-blue);
+ }
+
+#projects-table-con table .sub-row td{
+    border-bottom: 1px dashed var(--grey);
 
 }
 
-#projects-table-con table .hidden td{
-    border-bottom: 1px dashed var(--grey)
-}
+
 
 
