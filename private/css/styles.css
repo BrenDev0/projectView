@@ -167,14 +167,5 @@ body {
     margin-right: 12px;
 }
 
-@media screen and (min-width:900px){
-    #mobile-header{
-        display: none;
-    };
-
-    #mobile-menu{
-        display: none;
-    }
-}
 
 
