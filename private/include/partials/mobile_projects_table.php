@@ -28,7 +28,7 @@
                 echo $project_row;
 
                 // Get parts to every project
-                $parts_sql = $parts_sql = "SELECT * FROM parts WHERE project = $project";
+                $parts_sql = "SELECT * FROM parts WHERE project = $project";
                 $parts_stmt = $conn->query($parts_sql);
 
                 while($parts_row = $parts_stmt->fetch(PDO::FETCH_ASSOC)){

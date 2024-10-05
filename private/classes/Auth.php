@@ -1,7 +1,5 @@
 <?php
 class Auth{
-
-    
     function check_access(){
         session_start();
         if (! isset($_SESSION['auth'])) {
