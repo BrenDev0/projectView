@@ -3,26 +3,33 @@ require '../config/database.php';
 class Project{
     private $conn;
 
-    private function __construct(){
+    function __construct(){
         $this->conn = db_connect(); 
     }
 
-    function add_project($name, $type, $description){
-        $sql = 'INSERT INTO projects (name, type, description) VALUES (:name, :type, :description)';
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute(array(
+    function add_project($name, $type, $description, $user){
+        $sql_insert = 'INSERT INTO projects (name, type, description, user) VALUES (:name, :type, :description)';
+        $stmt_insert = $this->conn->prepare($sql_insert);
+        $stmt_insert->execute(array(
             ':name' => $name,
             ':type'=> $type,
-            ':decription' => $description
+            ':decription' => $description,
+            ':user' => $user
         ));
         // Return the project id 
-        $query = 'SELECT project_id FROM projects WHERE name = :name AND description = :description';
-        $stmt = $this->conn->prepare($query);
-        $id = $stmt->execute(array(
+        $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND description = :description';
+        $stmt_read = $this->conn->prepare($sql_read);
+        $id = $stmt_read->execute(array(
             ':name' => $name,
             ':description' => $description
         ));
         return $id;
+    }
+
+    function get_users_projects($user_id){
+        $sql = "SELECT * FROM projects WHERE user = $user_id";
+        $stmt = $this->conn->query($sql);
+        return $stmt;
     }
 
     function get_project($project_id){

@@ -9,13 +9,13 @@
             <?php
             // Get projects
             $user = $_SESSION['account'];
-            $sql = "SELECT * FROM projects WHERE user = $user";
-            $stmt = $conn->query($sql);
+            $projects = new Project;
+            $project_rows = $projects->get_users_projects($user);
 
-            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $project = $row['project_id'];
+            while($row = $project_rows->fetch(PDO::FETCH_ASSOC)){
+                $project_id = $row['project_id'];
                 $project_name = $row['name'];
-                $project_row = "<tr class='project-rows' id='$project'>
+                $project_html = "<tr class='project-rows' id='$project_id'>
                 <td>
                     <button class='show-rows'><i class='fas fa-chevron-circle-right'></i></button>
                     <span>$project_name</span>
@@ -25,7 +25,7 @@
                 </tr>";
                 
                 // display row
-                echo $project_row;
+                echo $project_html;
 
                 // Get parts to every project
                 $parts_sql = "SELECT * FROM parts WHERE project = $project";
