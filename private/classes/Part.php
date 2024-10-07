@@ -50,7 +50,27 @@ class Part{
         $this->conn->query($sql_delete);
         return;
     }
+
+    function adjsut_hours($part_id,$action, $hours){
+        $sql_read = "SELECT hours FROM parts WHERE part_id = $part_id";
+        $stmt_read = $this->conn->query($sql_read);
+        
+        $new_hours = 0;
+        $current_hours = $stmt_read->fetch(PDO::FETCH_ASSOC);
+
+        if($action === 'ADD'){
+            $new_hours = $current_hours + $hours; 
+        }else{
+            $new_hours = $current_hours - $hours;
+        }
+
+        $sql_update = 'UPDATE parts SET hours = :new_hours WHERE part_id = :part_id';
+        $stmt_update = $this->conn->prepare($sql_update);
+        $stmt_update->execute(array(
+            ':new_hours' => $new_hours,
+            'part_id' => $part_id
+        ));
+        return;
+    }
 }
-
-
 ?>
