@@ -1,5 +1,6 @@
 <?php
 require '../private/classes/Auth.php';
+require '../private/classes/Project.php';
 
 session_start();
 $auth = new Auth();
