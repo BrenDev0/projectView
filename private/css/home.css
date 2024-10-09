@@ -77,8 +77,6 @@
 }
 
 #recent-projects-table{
-    width: 100%;
-    height: 45%;
     padding: 7px; 
 }
 
@@ -105,8 +103,11 @@
     width: 100%;
     height: 45px;
     padding: 7px;
-    border-bottom: 1px solid var(--grey);
     text-align: left;  
+}
+
+#recent-projects-table tr{
+    border-bottom: 1px solid var(--grey);
 }
 
 #dashboard-elements-con{
@@ -132,9 +133,6 @@
         height: 100%;
     }
 
-    #home-body #header{
-        display: flex;
-    }
     
     #nav-bar{
         display: flex;
@@ -142,6 +140,7 @@
 
     .con{
         height: 80%;
+        width: 100%;
     }
 
     #recent-projects-table h2{
@@ -150,5 +149,10 @@
 
     #recent-projects-table th{
         height: 30px;
+    }
+
+    #progress-bar-con{
+        border: 1px solid var(--purple);
+        height: 50%;
     }
 }

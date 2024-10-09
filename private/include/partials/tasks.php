@@ -1,3 +1,5 @@
 <div class="full">
-    tasks
+<?php
+    echo date('t');
+?>
 </div>

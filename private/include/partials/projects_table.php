@@ -2,9 +2,11 @@
     <h2 class="h-con ha-center va-center">Projects</h2>
         <table>
             <thead>
-                <th>Project</th>
-                <th>Hours</th>
-                <th>Progress</th>
+                <tr>
+                    <th>Project</th>
+                    <th>Hours</th>
+                    <th>Progress</th>
+                </tr>
             </thead>
             <tbody>
                 <?php
@@ -23,8 +25,13 @@
                     echo "<tr id='$project_id'>
                     <td>$project_name</td>
                     <td>$project_hours</td>
-                    <td>$progress %</td>
-                </tr>";
+                    <td class='h-con va-center' id='progress'>
+                        <div class='wide' id='progress-bar-con'>
+                            <div style=' height: 100%; width: $progress%; background: green;' id='progress-bar-fill'></div>
+                        </div>
+                        <p class='full h-con ha-center va-center'>$progress%</p>
+                    </td>
+                    </tr>";
                 }
                 ?>
             </tbody>

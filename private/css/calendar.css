@@ -1,0 +1,12 @@
+@media screen and (min-width:900px){
+    #calendar-main{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    #calendar-con{
+        width: 100%;
+        height: 80%;
+    }
+}
