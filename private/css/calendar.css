@@ -10,21 +10,35 @@
         height: 80%;
     }
 
-    #calendar-con h2{
+    #date-select-con{
         font-size: 2rem;
         height: 10%;
-        color: var(--dark-blue);
-        background-color: var(--grey);
+        color: var(--yellow);
+        background-color: var(--dark-blue);
+    }
+
+    #date-select-con select{
+        height: 90%;
+        padding: 3px;
+        background-color: var(--dark-blue);
+        color: var(--yellow);
+        border: 0;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+
+    #month-select{
+        text-align: center;
+        margin-right: 10px;
     }
 
     #days-con{
         width: 100%;
         height: 90%;
         display: grid;
-        grid-template-columns: auto auto auto;
     }
 
-    .day, .day-names {
+    .day{
         text-align: center;
         background-color: var(--grey);
         color: var(--dark-blue);
@@ -32,9 +46,11 @@
     }
 
     .day-names{
+        background-color: var(--dark-blue);
+        color: var(--yellow);
         display: flex;
         justify-content: center;
         align-items: center;
-        border-top: none;
+        border-left: 1px dashed var(--purple);
     }
 }
