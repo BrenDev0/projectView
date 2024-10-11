@@ -14,4 +14,5 @@ include '../private/include/partials/html_head.php';
         ?>
     </main>
 </body>
+<script type="module" src="../private/js/calendar.js"></script>
 </html>
