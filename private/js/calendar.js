@@ -80,7 +80,7 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
         let rowEnd = rowStart + 1;
         let colStart =  new Date(`${month}/${i}/${year}`).getDay();
         let colEnd = colStart + 1;
-        const day = document.createElement('div');
+        const day = document.createElement('button');
         day.setAttribute('class', 'day');
         day.style.gridColumnStart = colStart;
         day.style.gridColumnEnd = colEnd;

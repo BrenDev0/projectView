@@ -45,6 +45,12 @@
         border: 1px solid var(--dark-blue);
     }
 
+    #days-con button:hover{
+        background-color: var(--purple);
+        color: var(--yellow);
+        cursor: pointer;
+    }
+
     .day-names{
         background-color: var(--dark-blue);
         color: var(--yellow);
