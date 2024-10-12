@@ -4,7 +4,10 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
     const endingSpaces = new Date(`${month}/${totalDays}/${year}`).getDay();
     const calendar = document.getElementById('days-con');
     const monthSelect = document.getElementById('month-select');
-    const yearSelect = document.getElementById('year-select')
+    const yearSelect = document.getElementById('year-select');
+
+    console.log(calendarData);
+
 
     //add function to selects
     monthSelect.addEventListener('change', () => createCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value)));
@@ -81,6 +84,11 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
         let colStart =  new Date(`${month}/${i}/${year}`).getDay();
         let colEnd = colStart + 1;
         const day = document.createElement('button');
+        day.addEventListener('click', () => {
+            const modal = document.getElementById('event-modal');
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+        })
         day.setAttribute('class', 'day');
         day.style.gridColumnStart = colStart;
         day.style.gridColumnEnd = colEnd;

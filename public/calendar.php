@@ -1,6 +1,6 @@
 <?php 
 require '../private/classes/Auth.php';
-require '../private/classes/Project.php';
+require '../private/classes/Calendar.php';
 
 session_start();
 $auth = new Auth();

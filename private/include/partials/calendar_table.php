@@ -1,7 +1,3 @@
-<?php
-$year = date('Y');
-$month = date('m');
-?>
 <div id="calendar-con">
     <div class="date-select-con wide h-con ha-center va-center" id="date-select-con">
         <select  name="month" id="month-select"></select>
