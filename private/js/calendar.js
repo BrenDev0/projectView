@@ -6,8 +6,6 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
     const monthSelect = document.getElementById('month-select');
     const yearSelect = document.getElementById('year-select');
 
-    console.log(calendarData);
-
 
     //add function to selects
     monthSelect.addEventListener('change', () => createCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value)));
@@ -80,23 +78,47 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
     }
     //populate calendar days
     for(let i = 1; i < totalDays + 1; i++){
+        // set grid location
         let rowEnd = rowStart + 1;
         let colStart =  new Date(`${month}/${i}/${year}`).getDay();
         let colEnd = colStart + 1;
+        // create buttons
         const day = document.createElement('button');
         day.addEventListener('click', () => {
             const modal = document.getElementById('event-modal');
             modal.style.display = 'block';
             modal.style.opacity = '1';
         })
+        // attributes/data
         day.setAttribute('class', 'day');
+        day.setAttribute('data-year', year);
+        day.setAttribute('data-month', month);
+        day.setAttribute('data-day', i);
+        // set grid positions
         day.style.gridColumnStart = colStart;
         day.style.gridColumnEnd = colEnd;
         day.style.gridRowStart = rowStart;
         day.style.gridRowEnd = rowEnd;
+        // add day number 
+        let numTag = document.createElement('p');
         const dayNumber = document.createTextNode(i);
-        day.appendChild(dayNumber);
+        numTag.appendChild(dayNumber);
+        day.append(numTag);
         calendar.append(day);
+
+        // calendarData is a json_encoded php variable located on calendar_page.php script tag
+        let events = calendarData.filter((item) => {
+            return item.year == year && item.month == month && item.day == i;
+        })
+        // if events render number of events to calendar
+        if(events.length > 0){
+            let eventTag = document.createElement('p');
+            eventTag.style.color = 'red';
+            eventTag.style.marginTop = '10px';
+            let note = events.length > 1 ? document.createTextNode(`${events.length} items`)  : document.createTextNode(`${events.length} item`);
+            eventTag.appendChild(note);
+            day.append(eventTag);
+        }
         //change row
         if(colStart == 6){
             rowStart = rowStart + 1;
