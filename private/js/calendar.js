@@ -78,47 +78,44 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
     }
     //populate calendar days
     for(let i = 1; i < totalDays + 1; i++){
+
         // set grid location
         let rowEnd = rowStart + 1;
         let colStart =  new Date(`${month}/${i}/${year}`).getDay();
         let colEnd = colStart + 1;
+
         // create buttons
         const day = document.createElement('button');
-        day.addEventListener('click', () => {
-            const modal = document.getElementById('event-modal');
-            modal.style.display = 'block';
-            modal.style.opacity = '1';
-        })
+        day.addEventListener('click', (event) => addCalendarItem(year, month, event.target.id));
+
         // attributes/data
         day.setAttribute('class', 'day');
-        day.setAttribute('data-year', year);
-        day.setAttribute('data-month', month);
-        day.setAttribute('data-day', i);
+        day.setAttribute('id', i);
+
         // set grid positions
         day.style.gridColumnStart = colStart;
         day.style.gridColumnEnd = colEnd;
         day.style.gridRowStart = rowStart;
         day.style.gridRowEnd = rowEnd;
         // add day number 
-        let numTag = document.createElement('p');
-        const dayNumber = document.createTextNode(i);
-        numTag.appendChild(dayNumber);
-        day.append(numTag);
+        let dayNumber = document.createElement('p').appendChild(document.createTextNode(i));
+        day.append(dayNumber);
         calendar.append(day);
 
         // calendarData is a json_encoded php variable located on calendar_page.php script tag
         let events = calendarData.filter((item) => {
             return item.year == year && item.month == month && item.day == i;
         })
+
         // if events render number of events to calendar
         if(events.length > 0){
-            let eventTag = document.createElement('p');
-            eventTag.style.color = 'red';
-            eventTag.style.marginTop = '10px';
-            let note = events.length > 1 ? document.createTextNode(`${events.length} items`)  : document.createTextNode(`${events.length} item`);
-            eventTag.appendChild(note);
-            day.append(eventTag);
+            let calendarItem = document.createElement('p');
+            calendarItem.appendChild(events.length > 1 ? document.createTextNode(`${events.length} items`)  : document.createTextNode(`${events.length} item`));
+            calendarItem.style.color = 'red';
+            calendarItem.style.marginTop = '10px';
+            day.append(calendarItem);
         }
+
         //change row
         if(colStart == 6){
             rowStart = rowStart + 1;
@@ -138,6 +135,44 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
     }
 
     return
+}
+
+// adding items to calendar
+function addCalendarItem(year, month, day){
+    console.log(day)
+    const modal = document.getElementById('event-modal');
+    const itemsCon = document.getElementById('items-con');
+    const formDataYear = document.getElementById('hidden-year');
+    const formDataMonth = document.getElementById('hidden-month');
+    const formDataDay = document.getElementById('hidden-day');
+
+    // create items title
+    const itmesTitle = document.createElement('h2').appendChild(document.createTextNode(`Items for ${day}/${month}/${year}`));
+    itemsCon.append(itmesTitle); 
+
+    // check calendar for items
+    calendarData.map((item) => {
+        // if items render to dom
+        if(item.day == day && item.month == month && item.year == year){
+            let dataTitle = document.createElement('h3').appendChild(document.createTextNode(item.title));
+            let dataDescription = document.createElement('p').appendChild(document.createTextNode(item.description));
+            itemsCon.append(dataTitle);
+            itemsCon.append(dataDescription);
+        }
+
+    // else render template
+
+    })
+    
+
+    // open modal
+    modal.style.display = 'flex';
+
+    // set data to hiddent elements for form
+    formDataYear.setAttribute('value', year);
+    formDataMonth.setAttribute('value', month);
+    formDataDay.setAttribute('value', day); 
+
 }
 
 // Get number of days in month
