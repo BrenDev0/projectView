@@ -2,13 +2,13 @@
 <nav class="h-con ha-end va-center" id="nav-bar">
     <ul class="h-con ha-end va-center">
         <li>
-            <a class="h-con ha-center va-center" href="calendar.php">Calendar</a>
+            <a class="h-con ha-center va-center nav-item" href="calendar.php">Calendar</a>
         </li>
         <li>
-            <a class="h-con ha-center va-center" href="">Hours</a>
+            <a class="h-con ha-center va-center nav-item" href="index.php">Home</a>
         </li>
         <li>
-            <a class="h-con ha-center va-center" href="">Projects</a>
+            <button class="h-con ha-center va-center nav-item" id="dt-new-project">New Project</button>
         </li>
     </ul>
 </nav>

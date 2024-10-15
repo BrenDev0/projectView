@@ -15,7 +15,7 @@ class Project{
             ':type'=> $type,
             ':description' => $description,
             ':user' => $user,
-            ':status' => 6
+            ':status' => 1
         ));
         // Return the project id 
         $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND description = :description';

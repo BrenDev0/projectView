@@ -1,5 +1,7 @@
-<div class="full">
 <?php
-    echo date('t');
+
 ?>
+
+<div id="tasks">
+    <h2>Calendar items for today</h2>
 </div>

@@ -10,6 +10,7 @@ export const activateModals = () => {
 
     function handleModal(modalId, action){
         const modal = document.getElementById(modalId);
+        console.log(modal.style)
         action === 'OPEN' ? modal.style.left = '0' : modal.style.left = '-100%';
     }
 

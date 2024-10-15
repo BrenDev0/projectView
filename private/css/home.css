@@ -107,19 +107,6 @@
     border-bottom: 1px solid var(--grey);
 }
 
-#dashboard-elements-con{
-    width: 100%;
-    height: 47%;
-    justify-content: space-around;
-}
-
-.dashboard-element{
-    width: 45%;
-    height: 85%;
-    border-radius: 7px;
-    background: var(--grey) ;
-}
-
 @media screen and (min-width:900px){
     #home-main-mobile{
         display: none;
@@ -135,16 +122,50 @@
         display: flex;
     }
 
+    #new-project-bar{
+        display: grid;
+        width: 100%;
+        height: 40%;
+    }
+
+    #new-project-bar .form-elements{
+        grid-area: 1/ 1 / 2 / 2;
+    }
+
+    #project-bar-textarea{
+        grid-area: 1 / 3 / 2 / 5 ;
+    }
+
+    #project-bar-buttons{
+        grid-area: 2 / 4 / 3 / 5  ;
+    }
+
+    #new-project-bar textarea{
+        width: 95%;
+        height: 95%;
+    }
+
+    #tasks-con{
+        overflow: scroll;
+    }
+
     .con{
         height: 80%;
         width: 100%;
+        overflow: scroll;
     }
 
-    #recent-projects-table h2{
+
+    #projects-table{
+        height: 100%;
+    }
+
+    #projects-table h2{
         height: 35px;
     }
 
-    #recent-projects-table th{
+
+    #projects-table th{
         height: 30px;
     }
 
