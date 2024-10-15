@@ -1,4 +1,4 @@
-<div class="full" id="recent-projects-table">
+<div id="projects-table">
     <h2 class="h-con ha-center va-center">Projects</h2>
         <table>
             <thead>

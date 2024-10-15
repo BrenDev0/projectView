@@ -69,28 +69,25 @@
     
 }
 
-.recent-project{
-    height: 55px;
-    padding: 5px;
-    border-bottom: 1px solid var(--grey);
 
-}
 
-#recent-projects-table{
+#projects-table{
+    width: 100%;
+    height: 77%;
     padding: 7px; 
 }
 
-#recent-projects-table h2{
+#projects-table h2{
     height: 50px;
     font-size: 1.3rem;
     color: var(--yellow);
 }
 
-#recent-projects-table table{
+#projects-table table{
     border-collapse: collapse;
 }
 
-#recent-projects-table th{
+#projects-table th{
     width: 100%;
     height: 45px;
     padding: 7px;
@@ -99,14 +96,14 @@
     text-align: left;
 }
 
-#recent-projects-table td{
+#projects-table td{
     width: 100%;
     height: 45px;
     padding: 7px;
     text-align: left;  
 }
 
-#recent-projects-table tr{
+#projects-table tr{
     border-bottom: 1px solid var(--grey);
 }
 

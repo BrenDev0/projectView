@@ -14,12 +14,8 @@ include '../private/include/partials/html_head.php';
     include '../private/include/partials/new_project_modal.php';
     include '../private/include/partials/new_idea_modal.php';
     // Recent projects component
-    include '../private/include/partials/recent_projects_table.php'
+    include '../private/include/partials/projects_table.php'
     ?>
-    <div class="h-con va-center" id="dashboard-elements-con">
-        <div class="dashboard-element"></div>
-        <div class="dashboard-element"></div>
-    </div>
    </main> 
 
    <!-- Desktop -->

@@ -86,11 +86,11 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
 
         // create buttons
         const day = document.createElement('button');
-        day.addEventListener('click', (event) => addCalendarItem(year, month, event.target.id));
-
         // attributes/data
         day.setAttribute('class', 'day');
-        day.setAttribute('id', i);
+        day.setAttribute('value', i);
+
+        day.addEventListener('click', () => addCalendarItem(year, month, i));
 
         // set grid positions
         day.style.gridColumnStart = colStart;
@@ -98,7 +98,8 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
         day.style.gridRowStart = rowStart;
         day.style.gridRowEnd = rowEnd;
         // add day number 
-        let dayNumber = document.createElement('p').appendChild(document.createTextNode(i));
+        let dayNumber = document.createElement('p');
+        dayNumber.appendChild(document.createTextNode(i));
         day.append(dayNumber);
         calendar.append(day);
 
@@ -139,7 +140,6 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
 
 // adding items to calendar
 function addCalendarItem(year, month, day){
-    console.log(day)
     const modal = document.getElementById('event-modal');
     const itemsCon = document.getElementById('items-con');
     const formDataYear = document.getElementById('hidden-year');
@@ -147,21 +147,27 @@ function addCalendarItem(year, month, day){
     const formDataDay = document.getElementById('hidden-day');
 
     // create items title
-    const itmesTitle = document.createElement('h2').appendChild(document.createTextNode(`Items for ${day}/${month}/${year}`));
-    itemsCon.append(itmesTitle); 
+    const itemsTitle = document.createElement('h1');
+    itemsTitle.appendChild(document.createTextNode(`Items for ${day}/${month}/${year}`));
+    itemsCon.append(itemsTitle); 
 
     // check calendar for items
     calendarData.map((item) => {
-        // if items render to dom
+        // if items render to DOM
         if(item.day == day && item.month == month && item.year == year){
-            let dataTitle = document.createElement('h3').appendChild(document.createTextNode(item.title));
-            let dataDescription = document.createElement('p').appendChild(document.createTextNode(item.description));
-            itemsCon.append(dataTitle);
-            itemsCon.append(dataDescription);
+            let itemDiv = document.createElement('div');
+            itemDiv.setAttribute('class', 'v-con va-center calendar-item');
+
+            let dataTitle = document.createElement('h3');
+            dataTitle.appendChild(document.createTextNode(item.title));
+
+            let dataDescription = document.createElement('p');
+            dataDescription.appendChild(document.createTextNode(item.description));
+
+            itemDiv.append(dataTitle);
+            itemDiv.append(dataDescription);
+            itemsCon.append(itemDiv);
         }
-
-    // else render template
-
     })
     
 

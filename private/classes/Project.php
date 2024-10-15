@@ -8,13 +8,14 @@ class Project{
     }
 
     function add_project($name, $type, $description, $user){
-        $sql_insert = 'INSERT INTO projects (name, type, description, user) VALUES (:name, :type, :description)';
+        $sql_insert = 'INSERT INTO projects (name, type, description, user, status) VALUES (:name, :type, :description, :user, :status)';
         $stmt_insert = $this->conn->prepare($sql_insert);
         $stmt_insert->execute(array(
             ':name' => $name,
             ':type'=> $type,
-            ':decription' => $description,
-            ':user' => $user
+            ':description' => $description,
+            ':user' => $user,
+            ':status' => 6
         ));
         // Return the project id 
         $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND description = :description';
