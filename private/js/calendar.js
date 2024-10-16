@@ -50,10 +50,12 @@ export function createCalendar(month = new Date().getMonth() + 1, year = new Dat
 
     //populate week day names
     for(let i = 0; i < 7; i++){
+        let width = window.innerWidth;
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const short = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
         let colEnd = i + 1;
         const weekDay = document.createElement('div');
-        const content = document.createTextNode(days[i]);
+        const content = width > 900 ? document.createTextNode(days[i]) : document.createTextNode(short[i]);
         weekDay.appendChild(content);
         weekDay.setAttribute('class', 'day-names');
         weekDay.style.gridColumnStart = i;

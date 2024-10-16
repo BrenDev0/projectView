@@ -6,6 +6,7 @@
                     <th>Project</th>
                     <th>Hours</th>
                     <th>Progress</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +23,7 @@
                     $progress = $projects->get_project_progress($project_id);
                     
                     //render the data to table
-                    echo "<tr id='$project_id'>
+                    echo "<tr class='project-table-row' id='$project_id'>
                     <td>$project_name</td>
                     <td>$project_hours</td>
                     <td class='h-con va-center' id='progress'>
@@ -30,6 +31,10 @@
                             <div style=' height: 100%; width: $progress%; background: green;' id='progress-bar-fill'></div>
                         </div>
                         <p class='full h-con ha-center va-center'>$progress%</p>
+                    </td>
+                    <td><form class='full' method='post'>
+                            <button id='view-project-btn' name='project_id' value='$project_id'>View</button>
+                        </form>
                     </td>
                     </tr>";
                 }

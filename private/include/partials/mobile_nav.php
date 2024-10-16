@@ -1,17 +1,13 @@
 <!-- Styles location styles.css -->
 <nav class="mobile-nav full" id="nav-con">
         <ul class="h-con " id="mobile-menu">
-            <a class="mobile-menu-item v-con">
+            <a href="calendar.php" class="mobile-menu-item v-con">
                 <img class="mobile-menu-img" src="../private/photos/calendar.jpg" alt="">
                 <li>Calendar</li>
             </a>
-            <a class="mobile-menu-item v-con">
+            <a href="index.php" class="mobile-menu-item v-con">
                 <img class="mobile-menu-img" src="../private/photos/projects-menu-item.jpg" alt="">
-                <li>Hours</li>
-            </a>
-            <a href="projects.php" class="mobile-menu-item v-con">
-                <img class="mobile-menu-img" src="../private/photos/projects-menu-item.jpg" alt="">
-                <li>Projects</li>
+                <li>Home</li>
             </a>
             <a class="mobile-menu-item v-con">
                 <img class="mobile-menu-img" src="../private/photos/projects-menu-item.jpg" alt="">

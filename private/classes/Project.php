@@ -7,22 +7,20 @@ class Project{
         $this->conn = db_connect(); 
     }
 
-    function add_project($name, $type, $description, $user){
-        $sql_insert = 'INSERT INTO projects (name, type, description, user, status) VALUES (:name, :type, :description, :user, :status)';
+    function add_project($name, $type, $user){
+        $sql_insert = 'INSERT INTO projects (name, type, user) VALUES (:name, :type, :user)';
         $stmt_insert = $this->conn->prepare($sql_insert);
         $stmt_insert->execute(array(
             ':name' => $name,
             ':type'=> $type,
-            ':description' => $description,
-            ':user' => $user,
-            ':status' => 1
+            ':user' => $user
         ));
         // Return the project id 
-        $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND description = :description';
+        $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND user = :user';
         $stmt_read = $this->conn->prepare($sql_read);
         $stmt_read->execute(array(
             ':name' => $name,
-            ':description' => $description
+            ':user' => $user
         ));
 
         $id = $stmt_read->fetch(PDO::FETCH_ASSOC)['project_id'];

@@ -20,15 +20,10 @@ if(isset($_POST['name']) && isset($_POST['type']) && isset($_POST['description']
                 <option selected value="personal">Personal</option>
                 <option value="professional">Professional</option>
             </select>
-        </div>
-        <div class="v-con ha-center form-elements">
-            <label for="">Description</label>
-            <textArea name="description" rows="7"></textArea>
-        </div>
-        
+        </div> 
         <div class="h-con ha-center va-center wide modal-form-btn-con">
-            <button type="submit" value="new-project">Create</button>
             <button id="close-new-project-modal">Cancel</button>
+            <button type="submit" value="new-project">Create</button>
         </div>
     </form>
 </div>
