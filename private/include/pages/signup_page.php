@@ -5,9 +5,9 @@
 include ('../private/include/partials/html_head.php')
 ?>
 <body id="signup-body">
-    <?php
-    include '../private/include/partials/dt_header.php'
-    ?>
+    <header class="header h-con va-center ha-start" id="signup-header">
+        <h1>ProjectView.</h1>
+    </header>
     <main id="signup-main">
         <div class="h-con ha-center va-center" id="demo">
             <p id="demo-p">Demo Video w/ description</p>

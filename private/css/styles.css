@@ -1,6 +1,3 @@
-@import url('./home.css');
-@import url('./signup.css');
-@import url('./signin.css');
 @import url('./calendar.css');
 
 :root{
@@ -81,8 +78,13 @@ body {
 }
 
 
-/* nav bar */
+
+
+
+
+/*----------------- nav bar-------------------- */
 #nav-bar{
+    display: none;
     height: 10%;
     border-top: 1px solid var(--purple);
 }
@@ -117,8 +119,8 @@ body {
 
 
 
-/* Mobile nav menu*/
 
+/*--------------- Mobile nav menu--------------*/
 .mobile-nav{
     position: absolute;
     top: -100%;
@@ -154,8 +156,11 @@ body {
     height: 100px
 }
 
-/* Mobile header */
 
+
+
+
+/*------------- Mobile header ---------------- */
 #mobile-header{
     height: 15%;
     padding:7px;
@@ -177,6 +182,592 @@ body {
     cursor: pointer;
     border-radius: 7px;
     margin-right: 12px;
+}
+
+
+
+
+/* ----------header----------- */
+
+#header{
+    display: none;
+}
+
+
+
+
+
+/*------------------ toolbar------------- */
+
+#tool-bar{
+    width: 100%;
+    height: 8%;
+}
+
+#tool-bar button{
+    border-radius: 0;
+    border: 0;
+    border-left: 1px solid var(--dark-blue);
+    width: 100%;
+    background: var(--grey);
+    color: var(--dark-blue);
+}
+
+
+
+
+
+
+
+/*---------- HOME PAGE------------- */
+
+#home-main{
+    display: block;
+    height: 100%;
+}
+
+
+#new-project-modal{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: var(--grey);
+    transition: ease-in-out 1.2s;
+}
+
+#new-project-modal form{
+    width: 90%;
+    height: 80%;
+    background-color: var(--dark-blue);
+    border-radius: 7px;
+}
+
+#new-project-modal form h2{
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.modal-form-btn-con{
+    margin-top: 30px;
+}
+
+.modal-form-btn-con button{
+    width: 35%;
+    height: 40px;
+    border-radius: 7px;
+    margin-right: 10px;
+    background-color: var(--grey);
+    color: var(--dark-blue);
+    
+}
+
+#projects-table{
+    width: 100%;
+    height: 77%;
+    padding: 7px; 
+    overflow: scroll;
+}
+
+#projects-table h2{
+    height: 50px;
+    font-size: 1.3rem;
+    color: var(--yellow);
+}
+
+#new-project-bar{
+    display: none;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 15%;
+}
+
+#dt-new-project{
+    display: none;
+}
+
+#projects-table table{
+    height: 100%;
+    border-collapse: collapse;
+}
+
+#projects-table th{
+    width: 100%;
+    height: 45px;
+    padding: 7px;
+    border-bottom: 3px solid var(--purple);
+    color: var(--yellow);
+    text-align: left;
+}
+
+#projects-table td{
+    width: 100%;
+    height: 45px;
+    padding: 7px;
+    text-align: left;  
+}
+
+#projects-table tr{
+    border-bottom: 1px solid var(--grey);
+}
+
+.project-table-row:hover{
+    background-color: var(--purple);
+    color: var(--yellow);
+}
+
+#view-project-btn{
+    padding: 7px;
+    cursor: pointer;
+    background: var(--grey);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 5px;
+}
+
+#formbar-cancel-btn, #dt-new-project{
+    display: none;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 16px;
+    background: var(--grey);
+    color: var(--dark-blue);
+    cursor: pointer;
+}
+
+#formbar-cancel-btn{
+    color: red;
+}
+
+#tasks-con{
+    display: none;
+}
+
+
+
+
+
+
+/*------------SIGN IN----------- */
+
+#signin-main{
+    width: 100%;
+    height: 90%;
+}
+
+#signin-form{
+    background-color: var(--grey);
+    width: 90%;
+    height: 90%;
+    border-radius: 7px;
+    color: var(--dark-blue)
+}
+
+#signin-form h2{
+    margin-bottom: 50px;
+}
+
+#signin-form button{
+    width: 35%;
+    height: 40px;
+    margin: 25px 0 50px 0;
+    background-color: var(--dark-blue);
+    color: var(--font);
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: center;
+    border: 0;
+}
+
+
+
+
+
+/*----------- SIGNUP---------- */
+
+#signup-body{
+    background-image: url('../photos/mobile-singup-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header{
+    width: 100%;
+    height: 10%;
+    font-size: 1rem;
+}
+
+.header h1{
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1.7rem;
+    font-weight: 350;
+}
+
+#signup-main{
+    width: 100%;
+    height: 90%;
+}
+
+#demo{
+    display: none;
+}
+
+#demo-p {
+    color: var(--font);
+}
+
+#mobile-landing a{
+    width: 60%;
+    height: 10%;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid var(--font);
+    border-radius: 5px;
+    background: rgba(21, 39, 51, .9);
+    border-color: var(--font);
+    color: var(--font);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;  
+}
+
+#mobile-landing button{
+    width: 60%;
+    height: 10%;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgba(21, 39, 51, .9);
+    border-color: var(--font);
+    color: var(--font);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#signup-form-con{
+    background-color: var(--grey);
+}
+
+#signup-form{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+    color: var(--font);
+}
+
+#signup-form h2{
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.form-elements{
+    width: 75%;
+    justify-content: space-around;
+    align-items: left;
+    margin: 10px;
+}
+
+.form-elements input, .form-elements select{
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#signup-button{
+    width: 35%;
+    height: 40px;
+    margin: 25px 0 50px 0;
+    background-color: var(--grey);
+    color: var(--dark-blue);
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+#signin-link{
+    margin-left: 4px;
+}
+
+
+
+
+
+
+/* -------------calendar------------- */
+
+#calendar-main{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#nav-con{
+    display: flex;
+}
+
+#calendar-con{
+    width: 100%;
+    height: 77%;
+}
+
+
+/* below this line need to delete repeating styles */
+
+
+#date-select-con{
+    font-size: 2rem;
+    height: 10%;
+    color: var(--yellow);
+    background-color: var(--dark-blue);
+}
+
+#date-select-con select{
+    height: 90%;
+    padding: 3px;
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+    border: 0;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+#month-select{
+    text-align: center;
+    margin-right: 10px;
+}
+
+#days-con{
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: column;
+}
+
+.day{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: var(--grey);
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+}
+
+#days-con button:hover{
+    background-color: var(--purple);
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+.day-names{
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px dashed var(--purple);
+}
+
+
+#event-modal{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-blue);
+}
+
+#event-modal form{
+    width: 100%;
+    height: 25%;
+    border: 1px solid white;
+}
+
+#items-con{
+    width: 100%;
+    height: 75%;
+    border: 1px solid white;
+}
+
+.calendar-item{
+width: 25%;
+height: 25%;
+border: 1px solid red;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:900px){
+
+    /* --------------mobile header--------- */
+
+    #mobile-header{
+        display: none;
+    }
+
+
+
+
+    /*------------ mobile nav -------------*/
+
+    #nav-con{
+        display: none;
+    }
+
+
+
+
+    /* ------------dt header------------ */
+    #header {
+        display: flex;
+    }
+
+
+
+
+    /*-------------- navbar-------------- */
+
+    #nav-bar{
+        display: flex;
+    }
+
+
+
+    /* ------toolbar-------------- */
+
+    #tool-bar{
+        display: none;
+    }
+
+
+/*-------------- HOME PAGE ----------------*/
+
+    #dt-new-project{
+        display: block;
+    }
+
+    #new-project-bar button{
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 16px;
+        background: var(--grey);
+        color: var(--dark-blue);
+        cursor: pointer;
+    }
+
+    #tasks-con{
+        display: flex;
+        overflow: scroll;
+    }
+
+    .con{
+        height: 80%;
+        width: 100%;
+    }
+
+    #projects-table{
+        height: 100%;
+    }
+
+  
+    #projects-table h2{
+        height: 35px;
+    }
+
+    #projects-table th{
+        height: 30px;
+    }
+
+    #progress-bar-con{
+        border: 1px solid var(--purple);
+        height: 50%;
+    }
+
+
+
+
+
+    /* -------------SIGN IN------------- */
+
+    #signin-form{
+        width: 40%;
+        height: 95%;
+    }
+
+
+
+
+    /*------------- SIGNUP------------ */
+
+     #mobile-landing {
+        display: none;
+    }
+
+    #header {
+        justify-content: flex-start;
+    }
+
+    #header h1{
+        margin: 0 0 0 10px;
+    }
+
+    #signup-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #demo {
+        display: flex;
+        width: 45%;
+        
+
+    }
+
+    #signup-form-con{
+        background: 0;
+        width: 45%;
+    }
+
+    #signup-form{
+        height: 95%;
+    }
+
+    .form-elements{
+        margin: 5px
+    }
+
+
+
+    /* ----------calendar-------------- */
+
+    #calendar-con{
+        width: 100%;
+        height: 80%;
+    }
+    
 }
 
 

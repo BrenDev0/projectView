@@ -19,7 +19,6 @@ $user_calendar = $calendar_data->get_user_calendar($_SESSION['account']);
            $y = $item['year'];
            if($d == $day && $m == $month && $y == $year){
             $title = $item['title'];
-            echo '';
            };
         }
         ?>
