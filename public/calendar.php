@@ -1,6 +1,6 @@
 <?php 
-require '../private/classes/Auth.php';
-require '../private/classes/Calendar.php';
+include_once '../private/classes/Auth.php';
+include_once '../private/classes/Calendar.php';
 
 session_start();
 $auth = new Auth();

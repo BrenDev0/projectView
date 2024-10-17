@@ -1,5 +1,19 @@
 <div id="projects-table">
     <h2 class="h-con ha-center va-center">Projects</h2>
+    <div class="h-con va-center">
+        <button class="h-con ha-center va-center" id="dt-new-project">New Project</button>
+        <button class='h-con ha-center va-center' id="formbar-cancel-btn">Cancel</button>
+        <form class="va-center" id="new-project-bar" method="post">
+            <div class="h-con form-elements">
+                <input type="text" name="name" placeholder="project name">
+                <select name="type" id="">
+                    <option value="personal">Personal</option>
+                    <option value="professional">Professional</option>
+                </select>
+            </div>
+            <button name="new_project">Submit</button>
+        </form>
+    </div>
         <table>
             <thead>
                 <tr>

@@ -1,5 +1,5 @@
 <?php
-require '../private/config/database.php';
+include_once '../private/config/database.php';
 
 class Calendar{
     private $conn;

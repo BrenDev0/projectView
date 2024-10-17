@@ -5,20 +5,17 @@ include '../private/include/partials/html_head.php';
 ?>
 <body id="home-body"> 
     <!-- Mobile -->
-   <main id="home-main-mobile">
+   <main id="home-main">
    <?php 
     include '../private/include/partials/mobile_header.php';
     include '../private/include/partials/mobile_nav.php';
     include '../private/include/partials/toolbar.php';
     // Modals
     include '../private/include/partials/new_project_modal.php';
-    // Recent projects component
-    include '../private/include/partials/projects_table.php'
     ?>
-   </main> 
+   
 
    <!-- Desktop -->
-   <main id="home-main">
     <?php
     include '../private/include/partials/dt_header.php';
     include '../private/include/partials/nav_bar.php';
@@ -29,7 +26,6 @@ include '../private/include/partials/html_head.php';
             ?>
             <div class="v-con full" id="tasks-con">
             <?php
-            include '../private/include/partials/new_project_bar.php';
             include '../private/include/partials/tasks.php';
             ?>
             </div>

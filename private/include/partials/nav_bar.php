@@ -8,7 +8,7 @@
             <a class="h-con ha-center va-center nav-item" href="index.php">Home</a>
         </li>
         <li>
-            <button class="h-con ha-center va-center nav-item" id="dt-new-project">New Project</button>
+            <button class="h-con ha-center va-center nav-item" id="">Sign Out</button>
         </li>
     </ul>
 </nav>

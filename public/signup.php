@@ -1,6 +1,6 @@
 <?php
-require '../private/classes/User.php';
-require '../private/classes/Auth.php';
+include_once '../private/classes/User.php';
+include_once '../private/classes/Auth.php';
 
 // Add user //
 session_start();

@@ -1,12 +1,13 @@
 import { mobileMenu } from './mobileMenuOperation.js'
-import { activateModals } from './modalOperation.js';
-import { handleFormBar } from './new_project_bar.js'
+import { toolbarOperation } from './toolbarOperation.js';
+import { formBarOperation } from './new_project_bar.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     mobileMenu();
-    activateModals();
-    handleFormBar()
+    toolbarOperation();
+    formBarOperation();
     console.log('Document Loaded.')
-})
+});
 
 
 
