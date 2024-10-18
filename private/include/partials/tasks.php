@@ -23,7 +23,7 @@ $today = $calendar->get_calendar_items($day, $month, $year, $_SESSION['account']
                 $description = $item['description'];
                 $start = $item['start_time'];
                 $end = $item['end_time'];
-                echo "<div class='h-con va-center task-item'>
+                echo "<div class='h-con va-center calendar-item'>
                     <p>$title</p>
                     <p>$description</p>
                     <div class='v-con'>

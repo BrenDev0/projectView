@@ -351,7 +351,7 @@ body {
     border-bottom: 2px solid var(--purple);
 }
 
-.task-item{
+.calendar-item{
     width: 100%;
     border: 2px solid var(--purple);
     border-radius: 5px;
@@ -617,11 +617,6 @@ body {
     border: 1px solid white;
 }
 
-.calendar-item{
-width: 25%;
-height: 25%;
-border: 1px solid red;
-}
 
 
 

@@ -158,7 +158,7 @@ function addCalendarItem(year, month, day){
         // if items render to DOM
         if(item.day == day && item.month == month && item.year == year){
             let itemDiv = document.createElement('div');
-            itemDiv.setAttribute('class', 'v-con va-center calendar-item');
+            itemDiv.setAttribute('class', 'task-item');
 
             let dataTitle = document.createElement('h3');
             dataTitle.appendChild(document.createTextNode(item.title));

@@ -1,4 +1,4 @@
-<div class="v-con va-center" id="event-modal">
+<div class="h-con va-center" id="event-modal">
     <form class="h-con va-center" action="">
         <input type="hidden" id="hidden-year">
         <input type="hidden" id="hidden-month">
