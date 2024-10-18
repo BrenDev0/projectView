@@ -34,5 +34,20 @@ class Calendar{
         $calendar = $stmt_read->fetchAll(PDO::FETCH_ASSOC);
         return $calendar;
     }
+
+    function get_calendar_items($day, $month, $year, $user){
+        $sql_read = 'SELECT * FROM calenddar WHERE day = :day AND month = :month AND year = :year AND user = :user';
+        $stmt_read = $this->conn->prepare($sql_read);
+        $stmt_read->execute(array(
+            ':day' => $day,
+            ':month' => $month,
+            ':year' => $year,
+            ':user' => $user
+        ));
+
+        $items = $stmt_read->fetchAll(PDO::FETCH_ASSOC);
+
+        return $items;
+    }
 }
 ?>
