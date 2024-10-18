@@ -5,21 +5,32 @@ date_default_timezone_set('America/Los_Angeles');
 $day = date('d');
 $month = date('m');
 $year = date('Y');
-$calendar_data = new Calendar;
-$user_calendar = $calendar_data->get_user_calendar($_SESSION['account']);
+$calendar = new Calendar;
+$today = $calendar->get_calendar_items($day, $month, $year, $_SESSION['account']);
+
 ?>
 
-<div class="h-con ha-center" id="tasks">
+<div class="v-con va-center full" id="tasks">
     <h2>Calendar items for today</h2>
-    <div>
+    <div class="wide">
         <?php
-        foreach($user_calendar as $item){
-           $d = $item['day'];
-           $m = $item['month'];
-           $y = $item['year'];
-           if($d == $day && $m == $month && $y == $year){
-            $title = $item['title'];
-           };
+        if(sizeof($today) < 1){
+            echo "<p>No items for today</p>";
+        }else{
+            foreach($today as $item){
+                $title = $item['title'];
+                $description = $item['description'];
+                $start = $item['start_time'];
+                $end = $item['end_time'];
+                echo "<div class='h-con va-center task-item'>
+                    <p>$title</p>
+                    <p>$description</p>
+                    <div class='v-con'>
+                        <p>$start</p>
+                        <p>$end</p>
+                    </div>
+                    </div>";
+            }
         }
         ?>
     </div>

@@ -521,10 +521,6 @@ body {
     height: 77%;
 }
 
-
-/* below this line need to delete repeating styles */
-
-
 #date-select-con{
     font-size: 2rem;
     height: 10%;
@@ -581,7 +577,6 @@ body {
     border-left: 1px dashed var(--purple);
 }
 
-
 #event-modal{
     display: none;
     position: absolute;
@@ -608,6 +603,32 @@ height: 25%;
 border: 1px solid red;
 }
 
+
+
+
+/* --------tasks ----------- */
+
+
+#tasks h2{
+    margin: 20px 0 20px 0;
+    font-size: 1.3rem;
+    color: var(--yellow);
+    border-bottom: 2px solid var(--purple);
+}
+
+.task-item{
+    width: 100%;
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    color: var(--dark-blue);
+    padding: 10px;
+    justify-content: space-between;
+    background-color: var(--yellow);
+}
+
+.task-item:hover{
+    background-color: var(--grey);
+}
 
 
 
