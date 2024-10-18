@@ -327,7 +327,7 @@ body {
     border-radius: 5px;
 }
 
-#formbar-cancel-btn, #dt-new-project{
+#dt-new-project{
     display: none;
     border: none;
     border-radius: 5px;
@@ -340,12 +340,30 @@ body {
     cursor: pointer;
 }
 
-#formbar-cancel-btn{
-    color: red;
-}
-
 #tasks-con{
     display: none;
+}
+
+#tasks h2{
+    margin: 20px 0 20px 0;
+    font-size: 1.3rem;
+    color: var(--yellow);
+    border-bottom: 2px solid var(--purple);
+}
+
+.task-item{
+    width: 100%;
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    color: var(--dark-blue);
+    padding: 10px;
+    justify-content: space-between;
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.task-item:hover{
+    background-color: var(--grey);
 }
 
 
@@ -604,36 +622,6 @@ width: 25%;
 height: 25%;
 border: 1px solid red;
 }
-
-
-
-
-/* --------tasks ----------- */
-
-
-#tasks h2{
-    margin: 20px 0 20px 0;
-    font-size: 1.3rem;
-    color: var(--yellow);
-    border-bottom: 2px solid var(--purple);
-}
-
-.task-item{
-    width: 100%;
-    border: 2px solid var(--purple);
-    border-radius: 5px;
-    color: var(--dark-blue);
-    padding: 10px;
-    justify-content: space-between;
-    background-color: var(--yellow);
-    cursor: pointer;
-}
-
-.task-item:hover{
-    background-color: var(--grey);
-}
-
-
 
 
 
