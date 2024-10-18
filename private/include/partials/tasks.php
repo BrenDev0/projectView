@@ -2,6 +2,7 @@
 require '../private/classes/Calendar.php';
 date_default_timezone_set('America/Los_Angeles');
 
+
 $day = date('d');
 $month = date('m');
 $year = date('Y');

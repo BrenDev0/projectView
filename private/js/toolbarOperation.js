@@ -22,6 +22,7 @@ export const toolbarOperation = () => {
     const viewTasks = () => {
         window.getComputedStyle(projectsTable).display === 'none' ? projectsTable.style.display = 'block' :projectsTable.style.display = 'none';
         window.getComputedStyle(tasks).display === 'none' ? tasks.style.display = 'flex' : tasks.style.display = 'none'; 
+        tasksBtn.innerText === "Today" ? tasksBtn.innerText = 'Projects' : tasksBtn.innerText = 'Today'
     }
 
     tasksBtn.addEventListener('click', viewTasks)

@@ -1,5 +1,3 @@
-@import url('./calendar.css');
-
 :root{
     --font: whitesmoke;
     --dark-blue: #152733;
@@ -211,6 +209,10 @@ body {
     width: 100%;
     background: var(--grey);
     color: var(--dark-blue);
+}
+
+#tb-projects-btn{
+    display: none;
 }
 
 
@@ -624,6 +626,7 @@ border: 1px solid red;
     padding: 10px;
     justify-content: space-between;
     background-color: var(--yellow);
+    cursor: pointer;
 }
 
 .task-item:hover{
