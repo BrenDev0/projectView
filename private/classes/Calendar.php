@@ -36,7 +36,7 @@ class Calendar{
     }
 
     function get_calendar_items($day, $month, $year, $user){
-        $sql_read = 'SELECT * FROM calenddar WHERE day = :day AND month = :month AND year = :year AND user = :user';
+        $sql_read = 'SELECT * FROM calendar WHERE day = :day AND month = :month AND year = :year AND user = :user';
         $stmt_read = $this->conn->prepare($sql_read);
         $stmt_read->execute(array(
             ':day' => $day,
