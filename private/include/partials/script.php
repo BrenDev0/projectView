@@ -1,1 +1,0 @@
-<script type="module" src="../private/js/index.js"></script>

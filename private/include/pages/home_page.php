@@ -32,7 +32,6 @@ include '../private/include/partials/html_head.php';
         </div>
     </main>
 </body>
-<?php
-require '../private/include/partials/script.php';
-?>
+<script type="module" src="../private/js/index.js"></script>
+<script type="module" src="../private/js/home.js"></script>
 </html>
