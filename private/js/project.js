@@ -1,11 +1,11 @@
 const projectPage = () =>{
    const componentsCon = document.getElementById('project-components-con');
    const notePad = document.getElementById('project-notes');
-   const projectNotes = projectData.project_info.notes;
+
 
    // render project components to con
 
-   projectData.project_components.map((item) =>{
+   projectData.map((item) =>{
     const name = item.name;
     const id = item.id;
     const nameDiv = document.createElement('button');
@@ -17,17 +17,15 @@ const projectPage = () =>{
    });
 
    // render project notes 
-   const notes = document.createTextNode(projectNotes);
-   notePad.appendChild(notes);
    notePad.addEventListener('keypress', () => {
     const saveNotesBtn = document.getElementById('save-notes');
-    if(projectNotes == notePad.value){
+    if(notes == notePad.value){
         saveNotesBtn.style.display = 'none'
     }else{
         saveNotesBtn.style.display = 'block'
     }
    })
-
+   return;
 }
 
 

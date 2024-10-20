@@ -27,6 +27,11 @@ class Project{
         return $id;
     }
 
+    function update_project($sql, $data){
+        $stmt_update = $this->conn->prepare($sql);
+        $stmt_update->execute($data);
+    }
+
     function get_user_projects($user_id){
         $sql = "SELECT * FROM projects WHERE user = $user_id";
         $stmt = $this->conn->query($sql);
