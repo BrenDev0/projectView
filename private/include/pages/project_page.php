@@ -49,7 +49,7 @@ require '../private/include/partials/html_head.php';
     <div class="h-con" id="project-content">
         <div id="project-components-con">
         <?php
-        $project_name = $project_info['name'];
+        $project_name = htmlentities($project_info['name']);
         echo "<h2>$project_name</h2>"
         ?>
         </div>

@@ -7,13 +7,19 @@ const projectPage = () =>{
 
    projectData.map((item) =>{
     const name = item.name;
-    const id = item.id;
-    const nameDiv = document.createElement('button');
-    nameDiv.setAttribute('class', 'h-con ha-start va-center project-component');
-    nameDiv.setAttribute('id', id);
+    const id = item.part_id;
+    // Create elements with attributes
+    const nameButton = document.createElement('button');
+    nameButton.setAttribute('class', 'h-con ha-start va-center project-component');
+    nameButton.setAttribute('id', id);
+    nameButton.addEventListener('click', () => showComponentData(id))
+    // Set names
    const nameContent = document.createTextNode(name);
-   nameDiv.appendChild(nameContent);
-   componentsCon.append(nameDiv);
+   nameButton.appendChild(nameContent);
+   // insert to DOM
+   componentsCon.append(nameButton);
+
+ 
    });
 
    // render project notes 
@@ -25,6 +31,24 @@ const projectPage = () =>{
         saveNotesBtn.style.display = 'block'
     }
    })
+
+   function showComponentData(id){
+    const component = projectData.find((comp) => comp.part_id == id);
+    const hoursNode = document.createTextNode(component.hours);
+    const hours = document.getElementById('hours');
+    const checkList = document.getElementById('checklist');
+    clearParent(hours);
+    clearParent(checkList);
+    hours.append(hoursNode);
+   }
+
+
+   function clearParent(parent){
+    while(parent.lastChild){
+        parent.removeChild(parent.lastChild);
+    }
+   }
+
    return;
 }
 
