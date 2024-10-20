@@ -22,7 +22,7 @@ const projectPage = () =>{
  
    });
 
-   // render project notes 
+   // show save button on notes edit 
    notePad.addEventListener('keypress', () => {
     const saveNotesBtn = document.getElementById('save-notes');
     if(notes == notePad.value){
@@ -32,17 +32,20 @@ const projectPage = () =>{
     }
    })
 
+   // render component data
    function showComponentData(id){
     const component = projectData.find((comp) => comp.part_id == id);
-    const hoursNode = document.createTextNode(component.hours);
+    const hoursNode = document.createTextNode(`${component.hours} Hours`);
+    const hiddenId = document.getElementById('component-id');
     const hours = document.getElementById('hours');
     const checkList = document.getElementById('checklist');
     clearParent(hours);
     clearParent(checkList);
     hours.append(hoursNode);
+    hiddenId.value = component.part_id
    }
 
-
+   // clearing containers
    function clearParent(parent){
     while(parent.lastChild){
         parent.removeChild(parent.lastChild);

@@ -681,9 +681,10 @@ body {
     height: 50%;
 }
 
-#hours{
+#hours-form{
     width: 50%;
     height: 100%;
+    justify-content: space-around;
     border: 1px solid red;
 }
 

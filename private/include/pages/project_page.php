@@ -59,8 +59,16 @@ require '../private/include/partials/html_head.php';
                 <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
                 <button name="save_notes" id="save-notes">Save</button>
             </form>
-            <div class="h-con va-center" id="hours-list">
-                <div id="hours"></div>
+            <div class="h-con va-center ha-center" id="hours-list">
+                <form class="v-con va-start" id="hours-form">
+                    <h2 id="hours"></h2>
+                    <input type="number">
+                    <input id="component-id" name="component_id" type="hidden">
+                    <div class="h-con">
+                        <button>Add Hours</button>
+                        <button>Remove Hours</button>
+                    </div>
+                </form>
                 <div id="checklist"></div>
             </div>
         </div>
@@ -72,7 +80,6 @@ require '../private/include/partials/html_head.php';
     const projectData = JSON.parse('<?=$project_data?>');
     const notesJson = JSON.stringify('<?=$project_notes?>');
     const notes = JSON.parse(notesJson);
-    console.log(notes)
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>
