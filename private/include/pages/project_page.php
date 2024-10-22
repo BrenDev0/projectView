@@ -53,24 +53,39 @@ require '../private/include/partials/html_head.php';
         echo "<h2>$project_name</h2>"
         ?>
         </div>
-        <div class="v-con va-center" id="project-dashboard">
-            <form method='post' class="v-con va-center" id="notepad">
-                <h2>Notes</h2>
-                <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
-                <button name="save_notes" id="save-notes">Save</button>
-            </form>
-            <div class="h-con va-center ha-center" id="hours-list">
-                <form class="v-con va-start" id="hours-form">
-                    <h2 id="hours"></h2>
-                    <input type="number">
-                    <input id="component-id" name="component_id" type="hidden">
-                    <div class="h-con">
-                        <button>Add Hours</button>
-                        <button>Remove Hours</button>
+        <div class="h-con va-center" id="project-dashboard">
+            <div class="v-con va-start" id="checklist-hours">
+                <form class="v-con va-center ha-start" id="checklist-form">
+                <h2>Component Checklist</h2>
+                    <div class="h-con ha-center va-center form-elements" id="checklist-input">
+                        <input type="text" name="checklist_item" placeholder="Add item to list.">
+                        <button name="checklist">Submit</button>
                     </div>
+                    <input type="hidden" name="component_id">
                 </form>
-                <div id="checklist"></div>
-            </div>
+                <ul id="checklist"></ul>
+                <form class="h-con va-center" id="hours-form">
+                    <div class="v-con va-center" id="hours-left">
+                        <div class="h-con va-center" id="hours-inputs">
+                            <input type="number" placeholder="hours.">
+                            <select name="action" id="hours-action">
+                                <option value="ADD">Add</option>
+                                <option value="REMOVE">Remove</option>
+                            </select>
+                        </div>
+                        <button name="save_hours">Submit</button>
+                        <input id="component-id" name="component_id" type="hidden">
+                    </div>
+                    <h2 id="hours"></h2>
+                </form>
+            </div>    
+            <form method='post' class="v-con va-start ha-center" id="notepad">
+                    <h2 class="h-con va-center ha-start wide">Notes</h2>
+                    <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
+                    <div class="h-con ha-end va-center" id="save-notes-con">
+                        <button name="save_notes" id="save-notes">Save</button>
+                    </div>
+            </form>
         </div>
         
     </div>
