@@ -1,5 +1,5 @@
 const projectPage = () =>{
-   const componentsCon = document.getElementById('project-components-con');
+   const componentsCon = document.getElementById('components-list');
    const notePad = document.getElementById('project-notes');
 
 

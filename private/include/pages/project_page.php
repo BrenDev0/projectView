@@ -46,12 +46,21 @@ require '../private/include/partials/html_head.php';
     include '../private/include/partials/dt_header.php';
     include '../private/include/partials/nav_bar.php';
     ?>
-    <div class="h-con" id="project-content">
-        <div id="project-components-con">
-        <?php
-        $project_name = htmlentities($project_info['name']);
-        echo "<h2>$project_name</h2>"
-        ?>
+    <div class="h-con wide" id="project-content">
+        <div class="v-con" id="project-components-con">
+            <?php
+                $project_name = htmlentities($project_info['name']);
+                echo "<h2>$project_name</h2>"
+            ?>
+            <form class="h-con va-center" id="add-component">
+                <input type="text" name="name" placeholder="add component">
+                <button name="add_project_component">Submit</button>
+                <?php
+                    $project_id = $_SESSION['project'];
+                    echo "<input type='hidden' value='$project_id'/>"
+                ?>
+            </form>
+            <div id="components-list"></div>
         </div>
         <div class="h-con va-center" id="project-dashboard">
             <div class="v-con va-start" id="checklist-hours">
@@ -61,7 +70,7 @@ require '../private/include/partials/html_head.php';
                         <input type="text" name="checklist_item" placeholder="Add item to list.">
                         <button name="checklist">Submit</button>
                     </div>
-                    <input type="hidden" name="component_id">
+                    <input class="hidden-component-id" type="hidden" name="component_id">
                 </form>
                 <ul id="checklist"></ul>
                 <form class="h-con va-center" id="hours-form">
