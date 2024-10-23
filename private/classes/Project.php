@@ -16,14 +16,7 @@ class Project{
             ':user' => $user
         ));
         // Return the project id 
-        $sql_read = 'SELECT project_id FROM projects WHERE name = :name AND user = :user';
-        $stmt_read = $this->conn->prepare($sql_read);
-        $stmt_read->execute(array(
-            ':name' => $name,
-            ':user' => $user
-        ));
-
-        $id = $stmt_read->fetch(PDO::FETCH_ASSOC)['project_id'];
+        $id = $this->conn->lastInsertId();
         return $id;
     }
 

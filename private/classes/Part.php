@@ -8,24 +8,18 @@ class Part{
         $this->conn = db_connect();
     }
 
-    function add_part($name, $description, $project_id){
-        $sql_insert = 'INSERT INTO parts (name, description, project) VALUES (:name, :description, :project)';
+    function add_part($name, $project_id){
+        $sql_insert = 'INSERT INTO parts (name, project, hours, status) VALUES (:name, :project, :hours, :status)';
         $stmt_insert = $this->conn->prepare($sql_insert);
         $stmt_insert->execute(array(
             ':name' => $name,
-            ':description' => $description,
-            ':project' => $project_id
+            ':project' => $project_id,
+            ':hours' => 0,
+            ':status' => 0
         ));
 
         // Return part 
-        $sql_read = 'SELECT * FROM parts WHERE name = :name AND description = :description';
-        $stmt_read = $this->conn->prepare($sql_read);
-        $stmt_read->execute(array(
-            ':name' => $name,
-            ':description' => $description
-        ));
-
-        $part = $stmt_read->fetch(PDO::FETCH_ASSOC);
+        $part = $this->conn->lastInsertId();
         return $part;
     }
 

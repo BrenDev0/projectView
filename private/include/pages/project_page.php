@@ -2,6 +2,7 @@
 include '../private/classes/Part.php';
 include '../private/classes/Project.php';
 
+
 $project_class = new Project;
 $project_info = $project_class->get_project($_SESSION['project']);
 $part_class = new Part;
@@ -9,7 +10,7 @@ $project_components = $part_class->get_project_parts($_SESSION['project']);
 $project_data = json_encode($project_components);
 $project_notes = json_encode($project_info['notes']);
 
-// updating project/parts
+// notes form
 if(isset($_POST['save_notes'])){
     $sql_update = 'UPDATE projects SET notes = :notes WHERE user = :user AND project_id = :project_id';
     $data = array(
@@ -20,6 +21,11 @@ if(isset($_POST['save_notes'])){
    $project_class->update_project($sql_update, $data);
    header('location: project.php');
    return;
+}
+
+// add component form
+if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
+
 }
 ?>
 
@@ -53,12 +59,8 @@ require '../private/include/partials/html_head.php';
                 echo "<h2>$project_name</h2>"
             ?>
             <form class="h-con va-center" id="add-component">
-                <input type="text" name="name" placeholder="add component">
+                <input type="text" name="component_name" placeholder="add component">
                 <button name="add_project_component">Submit</button>
-                <?php
-                    $project_id = $_SESSION['project'];
-                    echo "<input type='hidden' value='$project_id'/>"
-                ?>
             </form>
             <div id="components-list"></div>
         </div>
