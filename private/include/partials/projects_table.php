@@ -30,10 +30,10 @@
                 
                 // Gather all required data to populate the table
                 foreach($user_projects as $project){
-                    $project_name = $project['name'];
+                    $project_name = htmlentities($project['name']);
                     $project_id = $project['project_id'];
-                    $project_hours = $projects->get_project_hours($project_id);
-                    $progress = $projects->get_project_progress($project_id);
+                    $project_hours = htmlentities($projects->get_project_hours($project_id));
+                    $progress = htmlentities($projects->get_project_progress($project_id));
                     
                     //render the data to table
                     echo "<tr class='project-table-row' id='$project_id'>

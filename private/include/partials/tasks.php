@@ -19,10 +19,10 @@ $today = $calendar->get_calendar_items($day, $month, $year, $_SESSION['account']
             echo "<p>No items for today</p>";
         }else{
             foreach($today as $item){
-                $title = $item['title'];
-                $description = $item['description'];
-                $start = $item['start_time'];
-                $end = $item['end_time'];
+                $title = htmlentities($item['title']);
+                $description = htmlentities($item['description']);
+                $start = htmlentities($item['start_time']);
+                $end = htmlentities($item['end_time']);
                 echo "<div class='h-con va-center calendar-item'>
                     <p>$title</p>
                     <p>$description</p>
