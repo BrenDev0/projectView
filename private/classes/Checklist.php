@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once '../private/config/database.php';
 
 class Checklist{
     private $conn;
@@ -17,12 +17,12 @@ class Checklist{
     }
 
     function add_to_checklist($component_id, $user_id, $item){
-        $sql_insert = 'INSERT INTO checklist (item, user, component) VALUES (:item, :user, :component, :status)';
+        $sql_insert = 'INSERT INTO checklist (item, user, component, status) VALUES (:item, :user, :component, :status)';
         $stmt_insert = $this->conn->prepare($sql_insert);
         $stmt_insert->execute(array(
-            ':name' => $item,
+            ':item' => $item,
             ':user' => $user_id,
-            ':component_id' => $component_id,
+            ':component' => $component_id,
             ':status' => 0
         ));
     }

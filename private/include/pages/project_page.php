@@ -1,14 +1,17 @@
 <?php
 include '../private/classes/Part.php';
 include '../private/classes/Project.php';
+include '../private/classes/Checklist.php';
 
 
 $project_class = new Project;
-$project_info = $project_class->get_project($_SESSION['project']);
 $part_class = new Part;
+$checklis_class = new Checklist;
+$project_info = $project_class->get_project($_SESSION['project']);
 $project_components = $part_class->get_project_parts($_SESSION['project']);
 $project_data = json_encode($project_components);
 $project_notes = json_encode($project_info['notes']);
+$checklist_data = json_encode($checklis_class->get_user_checklist($_SESSION['account']));
 
 // notes form
 if(isset($_POST['save_notes'])){
@@ -30,7 +33,12 @@ if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
     return;
 }
 
-//
+// add checklist item
+if(isset($_POST['checklist']) && isset($_POST['checklist_item'])){
+    $checklis_class->add_to_checklist($_POST['checklist_component_id'], $_SESSION['account'], $_POST['checklist_item']);
+    header('location: project.php');
+    return;
+}
 ?>
 
 
@@ -70,13 +78,13 @@ require '../private/include/partials/html_head.php';
         </div>
         <div class="h-con va-center" id="project-dashboard">
             <div class="v-con va-start" id="checklist-hours">
-                <form class="v-con va-center ha-start" id="checklist-form">
+                <form method="post" class="v-con va-center ha-start" id="checklist-form">
                 <h2>Component Checklist</h2>
                     <div class="h-con ha-center va-center form-elements" id="checklist-input">
                         <input type="text" name="checklist_item" placeholder="Add item to list.">
                         <button name="checklist">Submit</button>
                     </div>
-                    <input class="hidden-component-id" type="hidden" name="component_id">
+                    <input class="hidden-component-id" type="hidden" name="checklist_component_id">
                 </form>
                 <ul id="checklist"></ul>
                 <form class="h-con va-center" id="hours-form">
@@ -89,7 +97,7 @@ require '../private/include/partials/html_head.php';
                             </select>
                         </div>
                         <button name="save_hours">Submit</button>
-                        <input id="component-id" name="component_id" type="hidden">
+                        <input class="hidden-component-id" name="component_id" type="hidden">
                     </div>
                     <h2 id="hours"></h2>
                 </form>
@@ -110,6 +118,7 @@ require '../private/include/partials/html_head.php';
     const projectData = JSON.parse('<?=$project_data?>');
     const notesJson = JSON.stringify('<?=$project_notes?>');
     const notes = JSON.parse(notesJson);
+    const checklistData = JSON.parse('<?=$checklist_data?>')
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>

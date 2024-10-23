@@ -36,13 +36,34 @@ const projectPage = () =>{
    function showComponentData(id){
     const component = projectData.find((comp) => comp.part_id == id);
     const hoursNode = document.createTextNode(`${component.hours} Hours`);
-    const hiddenId = document.getElementById('component-id');
+    const hiddenId = document.getElementsByClassName('hidden-component-id');
     const hours = document.getElementById('hours');
     const checkList = document.getElementById('checklist');
     clearParent(hours);
     clearParent(checkList);
+    
+    //set id to hidden inputs
+    for(let i = 0; i < hiddenId.length; i++){
+        hiddenId[i].value = id;
+    }
+
     hours.append(hoursNode);
-    hiddenId.value = component.part_id
+    checklistData.map((item) => {
+        if(item.component === id){
+            const li = document.createElement('li')
+            const box = document.createElement('input')
+            const label = document.createElement('label')
+            label.appendChild(document.createTextNode(item.item));
+            box.type = 'checkbox'
+            box.value = id;
+            li.className = 'checklist-item h-con ha-start va-center'
+            li.append(box);
+            li.append(label)
+            checkList.append(li)
+        }
+    })
+
+    return;
    }
 
    // clearing containers

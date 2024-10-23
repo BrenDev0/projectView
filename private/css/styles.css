@@ -782,6 +782,18 @@ body {
     cursor: pointer;
 }
 
+.checklist-item{
+    padding: 10px;
+    height: 20%;
+    color: var(--dark-blue);
+}
+
+.checklist-item label{
+    margin-left: 25px;
+}
+
+
+
 
 
 
