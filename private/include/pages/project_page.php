@@ -25,8 +25,12 @@ if(isset($_POST['save_notes'])){
 
 // add component form
 if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
-
+    $part_class->add_part($_POST['component_name'], $_SESSION['project']);
+    header('location: project.php');
+    return;
 }
+
+//
 ?>
 
 
@@ -58,7 +62,7 @@ require '../private/include/partials/html_head.php';
                 $project_name = htmlentities($project_info['name']);
                 echo "<h2>$project_name</h2>"
             ?>
-            <form class="h-con va-center" id="add-component">
+            <form method="post" class="h-con va-center" id="add-component">
                 <input type="text" name="component_name" placeholder="add component">
                 <button name="add_project_component">Submit</button>
             </form>
