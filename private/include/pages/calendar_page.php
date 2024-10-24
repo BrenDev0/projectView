@@ -15,7 +15,6 @@ include '../private/include/partials/html_head.php';
         // Mobile
         include '../private/include/partials/mobile_header.php';
         include '../private/include/partials/mobile_nav.php';
-        include '../private/include/partials/toolbar.php';
         include '../private/include/partials/new_project_modal.php';
         // Desktop
         include '../private/include/partials/calendar_event_modal.php';

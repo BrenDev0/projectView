@@ -54,7 +54,7 @@ require '../private/include/partials/html_head.php';
     //Mobile
     include '../private/include/partials/mobile_header.php';
     include '../private/include/partials/mobile_nav.php';
-    include '../private/include/partials/toolbar.php';
+    include '../private/include/partials/project_toolbar.php';
 
     // Modals
     include '../private/include/partials/new_project_modal.php';
@@ -102,7 +102,7 @@ require '../private/include/partials/html_head.php';
                     <h2 id="hours"></h2>
                 </form>
             </div>    
-            <form method='post' class="v-con va-start ha-center" id="notepad">
+            <form method='post' class="v-con va-center ha-center" id="notepad">
                     <h2 class="h-con va-center ha-start wide">Notes</h2>
                     <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
                     <div class="h-con ha-end va-center" id="save-notes-con">
@@ -119,6 +119,22 @@ require '../private/include/partials/html_head.php';
     const notesJson = JSON.stringify('<?=$project_notes?>');
     const notes = JSON.parse(notesJson);
     const checklistData = JSON.parse('<?=$checklist_data?>')
+
+    // view notes
+    const notesBtn = document.getElementById('tb-notes-btn');
+    const dashboard = document.getElementById('project-dashboard');
+    const componentsCon = document.getElementById('project-components-con');
+    const notepad = document.getElementById('notepad');
+
+    const viewNotes = () => {
+        window.getComputedStyle(dashboard).display === 'none' ? dashboard.style.display = 'flex' : dashboard.style.display = 'none';
+        window.getComputedStyle(componentsCon).display === 'flex' ? componentsCon.style.display = 'none' : componentsCon.style.display = 'flex';
+        window.getComputedStyle(notepad).display === 'none' ? notepad.style.display = 'flex' : notepad.style.display = 'none';
+        notesBtn.innerText === 'Notes' ? notesBtn.innerText = 'Components' : notesBtn.innerText = 'Notes';
+
+    }
+
+    notesBtn.addEventListener('click', viewNotes);
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>

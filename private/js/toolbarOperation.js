@@ -19,6 +19,8 @@ export const toolbarOperation = () => {
     const tasksBtn = document.getElementById('todays-tasks-btn');
     const tasks = document.getElementById('tasks-con');
     const projectsTable = document.getElementById('projects-table');
+
+
     const viewTasks = () => {
         window.getComputedStyle(projectsTable).display === 'none' ? projectsTable.style.display = 'block' :projectsTable.style.display = 'none';
         window.getComputedStyle(tasks).display === 'none' ? tasks.style.display = 'flex' : tasks.style.display = 'none'; 
@@ -26,8 +28,6 @@ export const toolbarOperation = () => {
     }
 
     tasksBtn.addEventListener('click', viewTasks)
-
     
-
     return;
 }
