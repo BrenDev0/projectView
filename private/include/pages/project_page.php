@@ -120,7 +120,7 @@ require '../private/include/partials/html_head.php';
     const notes = JSON.parse(notesJson);
     const checklistData = JSON.parse('<?=$checklist_data?>')
 
-    // view notes
+    // view notes mobile
     const notesBtn = document.getElementById('tb-notes-btn');
     const dashboard = document.getElementById('project-dashboard');
     const componentsCon = document.getElementById('project-components-con');

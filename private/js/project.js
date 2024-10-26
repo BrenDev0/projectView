@@ -26,8 +26,11 @@ const projectPage = () =>{
    // Set select on page render
    const projectComponents = document.getElementsByClassName('project-component');
    if(projectComponents.length > 0){
-       projectComponents[0].className = projectComponents[0].className += ' component-selected';
+       
+       showComponentData(projectComponents[0].id);
    }
+
+   
 
    // show save button on notes edit 
    notePad.addEventListener('keypress', () => {
@@ -63,7 +66,7 @@ const projectPage = () =>{
 
     hours.append(hoursNode);
     checklistData.map((item) => {
-        if(item.component === id){
+        if(item.component == id){
             const li = document.createElement('li')
             const box = document.createElement('input')
             const label = document.createElement('label')
