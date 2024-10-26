@@ -16,7 +16,7 @@ $today = $calendar->get_calendar_items($day, $month, $year, $_SESSION['account']
     <div class="wide">
         <?php
         if(sizeof($today) < 1){
-            echo "<p>No items for today</p>";
+            echo "<p class='h-con ha-center va-center'>No items for today</p>";
         }else{
             foreach($today as $item){
                 $title = htmlentities($item['title']);
