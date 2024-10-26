@@ -666,6 +666,10 @@ body {
     cursor: pointer;
 }
 
+.component-selected{
+    background-color: var(--purple);
+}
+
 .project-component:hover{
     background-color: var(--purple);
 }

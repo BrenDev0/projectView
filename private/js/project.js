@@ -8,19 +8,26 @@ const projectPage = () =>{
    projectData.map((item) =>{
     const name = item.name;
     const id = item.part_id;
+    
     // Create elements with attributes
     const nameButton = document.createElement('button');
     nameButton.setAttribute('class', 'h-con ha-start va-center project-component');
     nameButton.setAttribute('id', id);
     nameButton.addEventListener('click', () => showComponentData(id))
+
     // Set names
    const nameContent = document.createTextNode(name);
    nameButton.appendChild(nameContent);
+   
    // insert to DOM
-   componentsCon.append(nameButton);
-
- 
+   componentsCon.append(nameButton); 
    });
+
+   // Set select on page render
+   const projectComponents = document.getElementsByClassName('project-component');
+   if(projectComponents.length > 0){
+       projectComponents[0].className = projectComponents[0].className += ' component-selected';
+   }
 
    // show save button on notes edit 
    notePad.addEventListener('keypress', () => {
@@ -34,6 +41,13 @@ const projectPage = () =>{
 
    // render component data
    function showComponentData(id){
+    // clear selected classname
+    for(let i = 0; i < projectComponents.length; i++){
+        projectComponents[i].className = projectComponents[i].className.replace(' component-selected', '');
+    }
+    const selectedComponent = document.getElementById(id);
+    selectedComponent.className = selectedComponent.className += ' component-selected';
+
     const component = projectData.find((comp) => comp.part_id == id);
     const hoursNode = document.createTextNode(`${component.hours} Hours`);
     const hiddenId = document.getElementsByClassName('hidden-component-id');
