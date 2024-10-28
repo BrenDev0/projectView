@@ -61,7 +61,8 @@ const projectPage = () =>{
     
     //set id to hidden inputs
     for(let i = 0; i < hiddenId.length; i++){
-        hiddenId[i].value = id;
+        hiddenId[i].value = parseInt(id);
+        console.log(hiddenId[i].value)
     }
 
     hours.append(hoursNode);

@@ -3,7 +3,6 @@ include '../private/classes/Part.php';
 include '../private/classes/Project.php';
 include '../private/classes/Checklist.php';
 
-
 $project_class = new Project;
 $part_class = new Part;
 $checklis_class = new Checklist;
@@ -36,6 +35,13 @@ if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
 // add checklist item
 if(isset($_POST['checklist']) && isset($_POST['checklist_item'])){
     $checklis_class->add_to_checklist($_POST['checklist_component_id'], $_SESSION['account'], $_POST['checklist_item']);
+    header('location: project.php');
+    return;
+}
+
+// Add/remove hours 
+if(isset($_POST['save_hours']) && isset($_POST['hours_action']) && isset($_POST['hours'])){
+    $_SESSION['test'] =  $part_class->adjust_hours($_POST['component_id'], $_POST['hours_action'], $_POST['hours']);
     header('location: project.php');
     return;
 }
@@ -87,11 +93,11 @@ require '../private/include/partials/html_head.php';
                     <input class="hidden-component-id" type="hidden" name="checklist_component_id">
                 </form>
                 <ul id="checklist"></ul>
-                <form class="h-con va-center" id="hours-form">
+                <form method='post' class="h-con va-center" id="hours-form">
                     <div class="v-con va-center" id="hours-left">
                         <div class="h-con va-center" id="hours-inputs">
-                            <input type="number" placeholder="hours.">
-                            <select name="action" id="hours-action">
+                            <input type="number" placeholder="hours" name="hours">
+                            <select name="hours_action" id="hours-action">
                                 <option value="ADD">Add</option>
                                 <option value="REMOVE">Remove</option>
                             </select>

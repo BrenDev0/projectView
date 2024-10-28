@@ -45,12 +45,12 @@ class Part{
         return;
     }
 
-    function adjsut_hours($part_id,$action, $hours){
+    function adjust_hours($part_id,$action, $hours){
         $sql_read = "SELECT hours FROM parts WHERE part_id = $part_id";
         $stmt_read = $this->conn->query($sql_read);
         
         $new_hours = 0;
-        $current_hours = $stmt_read->fetch(PDO::FETCH_ASSOC);
+        $current_hours = $stmt_read->fetch(PDO::FETCH_ASSOC)['hours'];
 
         if($action === 'ADD'){
             $new_hours = $current_hours + $hours; 
