@@ -109,7 +109,7 @@ require '../private/include/partials/html_head.php';
                 </form>
             </div>    
             <form method='post' class="v-con va-center ha-center" id="notepad">
-                    <h2 class="h-con va-center ha-start wide">Notes</h2>
+                    <h2 class="h-con va-center ha-start wide"><?php echo "$project_name Notes" ?></h2>
                     <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
                     <div class="h-con ha-end va-center" id="save-notes-con">
                         <button name="save_notes" id="save-notes">Save</button>
