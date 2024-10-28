@@ -676,8 +676,18 @@ body {
     background-color: var(--purple);
 }
 
-.project-component:hover{
+.component-selected:hover{
     background-color: var(--purple);
+}
+
+.project-component:hover{
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+
+.component-selected:hover{
+    background-color: var(--purple);
+    color: var(--yellow);
 }
 
 #project-dashboard{
@@ -759,12 +769,13 @@ body {
 }
 
 #list{
-    justify-self: center;
+    flex-wrap: wrap;
     width: 95%;
     margin: 0 auto;
     height: 75%;
     border-radius: 7px;
     background-color: var(--yellow);
+    overflow: ;
 }
 
 #checklist-input button{
@@ -979,22 +990,17 @@ body {
         width: 100%;
         background: var(--grey);
         color: var(--dark-blue);
+        cursor: pointer;
     }
 
-    .dt-toolbar-btn:hover{
-        background-color: var(--dark-blue);
-        color: var(--yellow);
-        cursor: pointer;
-        border: 2px solid var(--yellow);
-        border-bottom: none;
-    }
 
     .dt-toolbar-selected{
         background-color: var(--dark-blue);
         color: var(--yellow);
         cursor: pointer;
-        border: 2px solid var(--yellow);
+        border: 2px solid var(--purple);
         border-bottom: none;
+        
     }
 
     #project-dashboard{

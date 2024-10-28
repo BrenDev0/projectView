@@ -88,14 +88,13 @@ require '../private/include/partials/html_head.php';
             ?>
             <div class="v-con" id="checklist">
                 <form method="post" class="v-con va-center ha-start" id="checklist-form">
-                <h2>Component Checklist</h2>
                     <div class="h-con ha-center va-center form-elements" id="checklist-input">
                         <input type="text" name="checklist_item" placeholder="Add item to list.">
                         <button name="checklist">Submit</button>
                     </div>
                     <input class="hidden-component-id" type="hidden" name="checklist_component_id">
                 </form>
-                <ul id="list"></ul>
+                <ul class="v-con" id="list"></ul>
             </div> 
             <div id="hours">
                 <form method='post' class="h-con va-center" id="hours-form">
@@ -160,7 +159,8 @@ require '../private/include/partials/html_head.php';
         const checklist = document.getElementById('checklist');
         checklist.style.display = 'none';
         notes.style.display = 'flex';
-        dtNotesBtn.className = dtNotesBtn.className += ' dt-toolbar-selected'
+        dtNotesBtn.className = dtNotesBtn.className += ' dt-toolbar-selected';
+        dtNotesBtn.style.borderLeft = 'none';
         
         return;
     }
@@ -186,9 +186,7 @@ require '../private/include/partials/html_head.php';
 
     dtChecklistBtn.addEventListener('click', dtViewChecklist)
 
-
-
-
+    dtViewNotes();
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>
