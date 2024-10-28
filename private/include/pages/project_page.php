@@ -82,8 +82,11 @@ require '../private/include/partials/html_head.php';
             </form>
             <div id="components-list"></div>
         </div>
-        <div class="h-con va-center" id="project-dashboard">
-            <div class="v-con va-start" id="checklist-hours">
+        <div id="project-dashboard">
+            <?php
+                include '../private/include/partials/dt_project_toolbar.php'
+            ?>
+            <div class="v-con" id="checklist">
                 <form method="post" class="v-con va-center ha-start" id="checklist-form">
                 <h2>Component Checklist</h2>
                     <div class="h-con ha-center va-center form-elements" id="checklist-input">
@@ -92,7 +95,9 @@ require '../private/include/partials/html_head.php';
                     </div>
                     <input class="hidden-component-id" type="hidden" name="checklist_component_id">
                 </form>
-                <ul id="checklist"></ul>
+                <ul id="list"></ul>
+            </div> 
+            <div id="hours">
                 <form method='post' class="h-con va-center" id="hours-form">
                     <div class="v-con va-center" id="hours-left">
                         <div class="h-con va-center" id="hours-inputs">
@@ -107,9 +112,8 @@ require '../private/include/partials/html_head.php';
                     </div>
                     <h2 id="hours"></h2>
                 </form>
-            </div>    
+            </div>   
             <form method='post' class="v-con va-center ha-center" id="notepad">
-                    <h2 class="h-con va-center ha-start wide"><?php echo "$project_name Notes" ?></h2>
                     <textarea name="notes" id="project-notes"><?php echo $project_info['notes']?></textarea>
                     <div class="h-con ha-end va-center" id="save-notes-con">
                         <button name="save_notes" id="save-notes">Save</button>
@@ -141,6 +145,50 @@ require '../private/include/partials/html_head.php';
     }
 
     notesBtn.addEventListener('click', viewNotes);
+
+    // view notes dt
+    const dtNotesBtn = document.getElementById('dt-view-notes');
+    const dtChecklistBtn = document.getElementById('dt-checklist-btn');
+
+    function dtViewNotes(){
+        const buttons = document.getElementsByClassName('dt-toolbar-btn');
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
+        }
+
+        const notes = document.getElementById('notepad')
+        const checklist = document.getElementById('checklist');
+        checklist.style.display = 'none';
+        notes.style.display = 'flex';
+        dtNotesBtn.className = dtNotesBtn.className += ' dt-toolbar-selected'
+        
+        return;
+    }
+
+    dtNotesBtn.addEventListener('click', dtViewNotes);
+
+
+    // dt view checklist
+    function dtViewChecklist(){
+        const buttons = document.getElementsByClassName('dt-toolbar-btn');
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
+        }
+
+        const checklist = document.getElementById('checklist');
+        const notes = document.getElementById('notepad');
+        notes.style.display = 'none';
+        checklist.style.display = 'block';
+        dtChecklistBtn.className = dtChecklistBtn.className += ' dt-toolbar-selected'
+
+        return;
+    }
+
+    dtChecklistBtn.addEventListener('click', dtViewChecklist)
+
+
+
+
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>

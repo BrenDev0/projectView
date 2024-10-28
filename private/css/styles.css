@@ -202,7 +202,7 @@ body {
     height: 8%;
 }
 
-.tool-bar button{
+.mobile-home-toolbar{
     border-radius: 0;
     border: 0;
     border-left: 1px solid var(--dark-blue);
@@ -619,6 +619,12 @@ body {
 
 
 /* ----------project page----------------- */
+
+#dt-project-toolbar{
+    display: none;
+}
+
+
 #project-content{
     height:77%;
 }
@@ -704,11 +710,10 @@ body {
     height: 90%;
 }
 
-#checklist-hours{
+#checklist{
     display: none;
-    width: 45%;
+    width: 100%;
     height: 100%;
-    justify-content: space-evenly;
 }
 
 #hours-form{
@@ -720,6 +725,7 @@ body {
 }
 
 #hours{
+    display: none;
     color: var(--dark-blue)
 }
 
@@ -752,9 +758,11 @@ body {
     font-size: 1.3rem;
 }
 
-#checklist{
-    width: 100%;
-    height: 50%;
+#list{
+    justify-self: center;
+    width: 95%;
+    margin: 0 auto;
+    height: 75%;
     border-radius: 7px;
     background-color: var(--yellow);
 }
@@ -843,6 +851,7 @@ body {
     .tool-bar{
         display: none;
     }
+
 
 
 /*-------------- HOME PAGE ----------------*/
@@ -958,9 +967,40 @@ body {
 
     /* ----------project page----------------- */
 
-    #project-dashboard{
+    #dt-project-toolbar{
         display: flex;
+        height: 10%;
+    }
+
+    .dt-toolbar-btn{
+        border-radius: 0;
+        border: 0;
+        border-left: 1px solid var(--dark-blue);
+        width: 100%;
+        background: var(--grey);
+        color: var(--dark-blue);
+    }
+
+    .dt-toolbar-btn:hover{
+        background-color: var(--dark-blue);
+        color: var(--yellow);
+        cursor: pointer;
+        border: 2px solid var(--yellow);
+        border-bottom: none;
+    }
+
+    .dt-toolbar-selected{
+        background-color: var(--dark-blue);
+        color: var(--yellow);
+        cursor: pointer;
+        border: 2px solid var(--yellow);
+        border-bottom: none;
+    }
+
+    #project-dashboard{
+        display: block;
         width: 75%;
+        height: 100%;
     }
 
     #project-content{
@@ -978,12 +1018,16 @@ body {
     }
 
     #notepad{
-        display: flex;
-        width: 45%;
+        height: 90%;
     }
 
-    #checklist-hours{
-        display: flex;
+    #project-notes{
+        height: 85%;
+        margin: auto 0;
+    }
+
+    #checklist{
+        height: 90%;
     }
 
     

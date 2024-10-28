@@ -2,7 +2,6 @@ const projectPage = () =>{
    const componentsCon = document.getElementById('components-list');
    const notePad = document.getElementById('project-notes');
 
-
    // render project components to con
 
    projectData.map((item) =>{
@@ -30,7 +29,9 @@ const projectPage = () =>{
        showComponentData(projectComponents[0].id);
    }
 
-   
+
+
+   notesBtn.addEventListener('click', dtViewNotes);
 
    // show save button on notes edit 
    notePad.addEventListener('keypress', () => {
@@ -41,6 +42,8 @@ const projectPage = () =>{
         saveNotesBtn.style.display = 'block'
     }
    })
+
+   return;
 
    // render component data
    function showComponentData(id){
@@ -55,14 +58,13 @@ const projectPage = () =>{
     const hoursNode = document.createTextNode(`${component.hours} Hours`);
     const hiddenId = document.getElementsByClassName('hidden-component-id');
     const hours = document.getElementById('hours');
-    const checkList = document.getElementById('checklist');
+    const checkList = document.getElementById('list');
     clearParent(hours);
     clearParent(checkList);
     
     //set id to hidden inputs
     for(let i = 0; i < hiddenId.length; i++){
         hiddenId[i].value = parseInt(id);
-        console.log(hiddenId[i].value)
     }
 
     hours.append(hoursNode);
@@ -84,6 +86,7 @@ const projectPage = () =>{
     return;
    }
 
+
    // clearing containers
    function clearParent(parent){
     while(parent.lastChild){
@@ -91,7 +94,7 @@ const projectPage = () =>{
     }
    }
 
-   return;
+
 }
 
 
