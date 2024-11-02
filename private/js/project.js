@@ -1,6 +1,7 @@
 const projectPage = () =>{
    const componentsCon = document.getElementById('components-list');
    const notePad = document.getElementById('project-notes');
+   const componentSelect = document.getElementById('mobile-component-list')
 
    // render project components to con
 
@@ -14,11 +15,18 @@ const projectPage = () =>{
     nameButton.setAttribute('id', id);
     nameButton.addEventListener('click', () => showComponentData(id))
 
+    //creat mobile elements
+    const mobileComponentOption = document.createElement('option');
+    mobileComponentOption.setAttribute('value', id)
+    componentSelect.addEventListener('change', (e) => showComponentData(e.target.value))
     // Set names
    const nameContent = document.createTextNode(name);
-   nameButton.appendChild(nameContent);
+   nameButton.textContent = name
+   mobileComponentOption.appendChild(nameContent)
+   
    
    // insert to DOM
+   componentSelect.append(mobileComponentOption)
    componentsCon.append(nameButton); 
    });
 

@@ -626,10 +626,11 @@ body {
 
 
 #project-content{
-    height:77%;
+    height: 71%;
 }
 
 #project-components-con{
+    display: none;
     width: 100%;
 }
 
@@ -691,9 +692,18 @@ body {
 }
 
 #project-dashboard{
-    display: none;
     width: 100%;
     justify-content: space-evenly;
+
+}
+
+#mobile-select-con{
+    display: none;
+    margin-top: 7px;
+}
+
+#mobile-select-con select{
+    border-radius: 7px
 }
 
 #notepad{
@@ -717,7 +727,7 @@ body {
     color: var(--dark-blue);
     padding: 20px;
     width: 95%;
-    height: 90%;
+    height: 85%;
 }
 
 #checklist{
@@ -775,7 +785,7 @@ body {
     height: 75%;
     border-radius: 7px;
     background-color: var(--yellow);
-    overflow: ;
+    overflow: scroll ;
 }
 
 #checklist-input button{
@@ -1014,6 +1024,7 @@ body {
     }
 
     #project-components-con{
+        display: flex;
         width: 25%;
         border-right: 1px dashed var(--yellow);
 
@@ -1028,13 +1039,14 @@ body {
     }
 
     #project-notes{
-        height: 85%;
         margin: auto 0;
     }
 
     #checklist{
         height: 90%;
     }
+
+
 
     
 }

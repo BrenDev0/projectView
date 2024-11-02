@@ -130,20 +130,32 @@ require '../private/include/partials/html_head.php';
     const checklistData = JSON.parse('<?=$checklist_data?>')
 
     // view notes mobile
-    const notesBtn = document.getElementById('tb-notes-btn');
     const dashboard = document.getElementById('project-dashboard');
-    const componentsCon = document.getElementById('project-components-con');
+    const notesBtn = document.getElementById('tb-notes-btn');
+    const checklistBtn = document.getElementById('tb-checklist-btn');
     const notepad = document.getElementById('notepad');
+    const checklist = document.getElementById('checklist');
+    const mobileSelect = document.getElementById('mobile-select-con')
 
     const viewNotes = () => {
-        window.getComputedStyle(dashboard).display === 'none' ? dashboard.style.display = 'flex' : dashboard.style.display = 'none';
-        window.getComputedStyle(componentsCon).display === 'flex' ? componentsCon.style.display = 'none' : componentsCon.style.display = 'flex';
-        window.getComputedStyle(notepad).display === 'none' ? notepad.style.display = 'flex' : notepad.style.display = 'none';
-        notesBtn.innerText === 'Notes' ? notesBtn.innerText = 'Components' : notesBtn.innerText = 'Notes';
-
+        checklist.style.display = 'none';
+        notepad.style.display = 'flex';
+        mobileSelect.style.display = 'none'
+        return
     }
 
     notesBtn.addEventListener('click', viewNotes);
+
+    // mobile checklist
+   const viewChecklist = () =>{
+        mobileSelect.style.display = 'flex'
+        notepad.style.display = 'none';
+        checklist.style.display = 'block'
+        return;
+    }
+
+    checklistBtn.addEventListener('click', viewChecklist)
+
 
     // view notes dt
     const dtNotesBtn = document.getElementById('dt-view-notes');
@@ -155,10 +167,8 @@ require '../private/include/partials/html_head.php';
             buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
         }
 
-        const notes = document.getElementById('notepad')
-        const checklist = document.getElementById('checklist');
         checklist.style.display = 'none';
-        notes.style.display = 'flex';
+        notepad.style.display = 'flex';
         dtNotesBtn.className = dtNotesBtn.className += ' dt-toolbar-selected';
         dtNotesBtn.style.borderLeft = 'none';
         
@@ -175,9 +185,7 @@ require '../private/include/partials/html_head.php';
             buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
         }
 
-        const checklist = document.getElementById('checklist');
-        const notes = document.getElementById('notepad');
-        notes.style.display = 'none';
+        notepad.style.display = 'none';
         checklist.style.display = 'block';
         dtChecklistBtn.className = dtChecklistBtn.className += ' dt-toolbar-selected'
 
