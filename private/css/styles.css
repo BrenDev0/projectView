@@ -744,7 +744,7 @@ body {
     border-radius: 7px;
 }
 
-#hours{
+#hours-con{
     display: none;
     color: var(--dark-blue)
 }

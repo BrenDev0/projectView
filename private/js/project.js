@@ -60,7 +60,7 @@ const projectPage = () =>{
         projectComponents[i].className = projectComponents[i].className.replace(' component-selected', '');
     }
     const selectedComponent = document.getElementById(id);
-    selectedComponent.className = selectedComponent.className += ' component-selected';
+    selectedComponent.className += ' component-selected';
 
     const component = projectData.find((comp) => comp.part_id == id);
     const hoursNode = document.createTextNode(`${component.hours} Hours`);

@@ -96,7 +96,7 @@ require '../private/include/partials/html_head.php';
                 </form>
                 <ul class="v-con" id="list"></ul>
             </div> 
-            <div id="hours">
+            <div id="hours-con">
                 <form method='post' class="h-con va-center" id="hours-form">
                     <div class="v-con va-center" id="hours-left">
                         <div class="h-con va-center" id="hours-inputs">
@@ -133,11 +133,13 @@ require '../private/include/partials/html_head.php';
     const dashboard = document.getElementById('project-dashboard');
     const notesBtn = document.getElementById('tb-notes-btn');
     const checklistBtn = document.getElementById('tb-checklist-btn');
+    const hoursBtn = document.getElementById('tb-checklist-btn');
     const notepad = document.getElementById('notepad');
     const checklist = document.getElementById('checklist');
+    const hours = document.getElementById('hours-con');
     const mobileSelect = document.getElementById('mobile-select-con')
 
-    const viewNotes = () => {
+    function viewNotes(){
         checklist.style.display = 'none';
         notepad.style.display = 'flex';
         mobileSelect.style.display = 'none'
@@ -147,19 +149,22 @@ require '../private/include/partials/html_head.php';
     notesBtn.addEventListener('click', viewNotes);
 
     // mobile checklist
-   const viewChecklist = () =>{
+   function viewChecklist(){
         mobileSelect.style.display = 'flex'
         notepad.style.display = 'none';
         checklist.style.display = 'block'
         return;
     }
 
-    checklistBtn.addEventListener('click', viewChecklist)
+    checklistBtn.addEventListener('click', viewChecklist);
+
+    // mobile hours
 
 
     // view notes dt
     const dtNotesBtn = document.getElementById('dt-view-notes');
     const dtChecklistBtn = document.getElementById('dt-checklist-btn');
+    const dtHoursBtn = document.getElementById('dt-hours-btn')
 
     function dtViewNotes(){
         const buttons = document.getElementsByClassName('dt-toolbar-btn');
@@ -168,8 +173,9 @@ require '../private/include/partials/html_head.php';
         }
 
         checklist.style.display = 'none';
+        hours.style.display = 'none';
         notepad.style.display = 'flex';
-        dtNotesBtn.className = dtNotesBtn.className += ' dt-toolbar-selected';
+        dtNotesBtn.className += ' dt-toolbar-selected';
         dtNotesBtn.style.borderLeft = 'none';
         
         return;
@@ -186,13 +192,32 @@ require '../private/include/partials/html_head.php';
         }
 
         notepad.style.display = 'none';
+        hours.style.display = 'none';
         checklist.style.display = 'block';
-        dtChecklistBtn.className = dtChecklistBtn.className += ' dt-toolbar-selected'
+        dtChecklistBtn.className += ' dt-toolbar-selected'
 
         return;
     }
 
     dtChecklistBtn.addEventListener('click', dtViewChecklist)
+
+    // dt view hours
+    function dtViewHours(){
+        const buttons = document.getElementsByClassName('dt-toolbar-btn');
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
+        }
+        
+        notepad.style.display = 'none';
+        checklist.style.display = 'none';
+        hours.style.display = 'flex';
+
+        dtHoursBtn.className += ' dt-toolbar-selected'
+        dtHoursBtn.style.borderRight = 'none'
+        return; 
+    }
+
+    dtHoursBtn.addEventListener('click', dtViewHours);
 
     dtViewNotes();
 </script>
