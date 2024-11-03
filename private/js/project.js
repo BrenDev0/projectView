@@ -83,7 +83,8 @@ const projectPage = () =>{
             const label = document.createElement('label')
             label.appendChild(document.createTextNode(item.item));
             box.type = 'checkbox'
-            box.value = id;
+            box.name = 'list_items[]'
+            box.value = item.item_id;
             li.className = 'checklist-item h-con ha-start va-center'
             li.append(box);
             li.append(label)

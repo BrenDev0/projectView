@@ -93,11 +93,11 @@ require '../private/include/partials/html_head.php';
                         <button name="checklist">Submit</button>
                     </div>
                     <input class="hidden-component-id" type="hidden" name="checklist_component_id">
+                    <ul class="v-con" id="list"></ul>
                 </form>
-                <ul class="v-con" id="list"></ul>
             </div> 
             <div id="hours-con">
-                <form method='post' class="h-con va-center" id="hours-form">
+                <form method='post' class="v-con va-center ha-center" id="hours-form">
                     <div class="v-con va-center" id="hours-left">
                         <div class="h-con va-center" id="hours-inputs">
                             <input type="number" placeholder="hours" name="hours">
