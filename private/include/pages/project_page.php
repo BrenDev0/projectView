@@ -98,7 +98,6 @@ require '../private/include/partials/html_head.php';
             </div> 
             <div id="hours-con">
                 <form method='post' class="v-con va-center ha-center" id="hours-form">
-                    <div class="v-con va-center" id="hours-left">
                         <div class="h-con va-center" id="hours-inputs">
                             <input type="number" placeholder="hours" name="hours">
                             <select name="hours_action" id="hours-action">
@@ -108,7 +107,6 @@ require '../private/include/partials/html_head.php';
                         </div>
                         <button name="save_hours">Submit</button>
                         <input class="hidden-component-id" name="component_id" type="hidden">
-                    </div>
                     <h2 id="hours"></h2>
                 </form>
             </div>   

@@ -738,29 +738,25 @@ body {
 
 #hours-form{
     width: 100%;
-    height: 25%;
+    height: 100%;
     background: var(--yellow);
     justify-content: space-around;
     border-radius: 7px;
 }
 
 #hours-con{
+    border: 1px solid green;
+    height: 90%;
     display: none;
     color: var(--dark-blue)
 }
 
-#hours-left{
-    width: 50%;
-    height: 100%;
-    justify-content: space-evenly;
-}
-
-#hours-left input{
+#hours-form input{
     width: 50%;
     border-radius: 5px;
 }
 
-#hours-left button{
+#hours-form button{
     width: 50%;
 }
 
