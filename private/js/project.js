@@ -33,13 +33,8 @@ const projectPage = () =>{
    // Set select on page render
    const projectComponents = document.getElementsByClassName('project-component');
    if(projectComponents.length > 0){
-       
        showComponentData(projectComponents[0].id);
    }
-
-
-
-   notesBtn.addEventListener('click', dtViewNotes);
 
    // show save button on notes edit 
    notePad.addEventListener('keypress', () => {

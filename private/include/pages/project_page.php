@@ -11,6 +11,11 @@ $project_components = $part_class->get_project_parts($_SESSION['project']);
 $project_data = json_encode($project_components);
 $project_notes = json_encode($project_info['notes']);
 $checklist_data = json_encode($checklist_class->get_user_checklist($_SESSION['account']));
+if(isset($_SESSION['tab'])){
+    $tab = json_encode($_SESSION['tab']);
+}else{
+    $tab = $_SESSION['tab'] = 'notes';
+}
 
 // notes form
 if(isset($_POST['save_notes'])){
@@ -21,6 +26,7 @@ if(isset($_POST['save_notes'])){
     ':project_id' => $_SESSION['project']
    );
    $project_class->update_project($sql_update, $data);
+   $_SESSION['tab'] = 'notes';
    header('location: project.php');
    return;
 }
@@ -35,6 +41,7 @@ if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
 // add checklist item
 if(isset($_POST['checklist']) && isset($_POST['checklist_item'])){
     $checklist_class->add_to_checklist($_POST['checklist_component_id'], $_SESSION['account'], $_POST['checklist_item']);
+    $_SESSION['tab'] = 'checklist';
     header('location: project.php');
     return;
 }
@@ -96,7 +103,7 @@ require '../private/include/partials/html_head.php';
                     <ul class="v-con" id="list"></ul>
                 </form>
             </div> 
-            <div id="hours-con">
+            <div class="v-con va-center ha-center" id="hours-con">
                 <form method='post' class="v-con va-center ha-center" id="hours-form">
                         <div class="h-con va-center" id="hours-inputs">
                             <input type="number" placeholder="hours" name="hours">
@@ -126,6 +133,8 @@ require '../private/include/partials/html_head.php';
     const notesJson = JSON.stringify('<?=$project_notes?>');
     const notes = JSON.parse(notesJson);
     const checklistData = JSON.parse('<?=$checklist_data?>')
+    const tab = JSON.parse('<?=$tab?>');
+    console.log(tab)
 
     // view notes mobile
     const dashboard = document.getElementById('project-dashboard');
@@ -217,7 +226,12 @@ require '../private/include/partials/html_head.php';
 
     dtHoursBtn.addEventListener('click', dtViewHours);
 
-    dtViewNotes();
+    if(!tab || tab === 'notes'){
+        dtViewNotes();
+    }else if(tab === 'checklist'){
+        dtViewChecklist();
+    }
+    
 </script>
 <script type="module" src="../private/js/index.js"></script>
 <script type="module" src="../private/js/project.js"></script>
