@@ -5,12 +5,12 @@ include '../private/classes/Checklist.php';
 
 $project_class = new Project;
 $part_class = new Part;
-$checklis_class = new Checklist;
+$checklist_class = new Checklist;
 $project_info = $project_class->get_project($_SESSION['project']);
 $project_components = $part_class->get_project_parts($_SESSION['project']);
 $project_data = json_encode($project_components);
 $project_notes = json_encode($project_info['notes']);
-$checklist_data = json_encode($checklis_class->get_user_checklist($_SESSION['account']));
+$checklist_data = json_encode($checklist_class->get_user_checklist($_SESSION['account']));
 
 // notes form
 if(isset($_POST['save_notes'])){
@@ -34,7 +34,7 @@ if(isset($_POST['add_project_component']) && isset($_POST['component_name'])){
 
 // add checklist item
 if(isset($_POST['checklist']) && isset($_POST['checklist_item'])){
-    $checklis_class->add_to_checklist($_POST['checklist_component_id'], $_SESSION['account'], $_POST['checklist_item']);
+    $checklist_class->add_to_checklist($_POST['checklist_component_id'], $_SESSION['account'], $_POST['checklist_item']);
     header('location: project.php');
     return;
 }
