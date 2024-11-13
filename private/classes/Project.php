@@ -76,8 +76,8 @@ class Project{
         
     }
 
-    function delete_project($project_id){
-        $sql_delete = "DELETE * FROM projects WHERE project_id = $project_id";
+    function delete_project(int $project_id):void{
+        $sql_delete = "DELETE FROM projects WHERE project_id = $project_id";
         $this->conn->query($sql_delete);
         return; 
     }

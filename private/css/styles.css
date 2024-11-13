@@ -318,13 +318,24 @@ body {
     color: var(--yellow);
 }
 
-#view-project-btn{
+.view-project-btn{
     padding: 7px;
     cursor: pointer;
     background: var(--grey);
     color: var(--dark-blue);
     border: none;
     border-radius: 5px;
+}
+
+.delete-project-btn{
+    color: red;
+    padding: 7px;
+    cursor: pointer;
+    background: var(--grey);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
 #dt-new-project{

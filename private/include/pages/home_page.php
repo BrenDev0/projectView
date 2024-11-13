@@ -1,3 +1,26 @@
+<?php
+// new project
+$project = new Project;
+
+if(isset($_POST['new_project']) && isset($_POST['name']) && isset($_POST['type'])){
+   $new_project = $project->add_project($_POST['name'], $_POST['type'], $_SESSION['account']);
+   $_SESSION['project'] = $new_project;
+   header('location: project.php');
+   return;
+} else if(isset($_POST['project_id'])){
+   $_SESSION['project'] = $_POST['project_id'];
+   header('location: project.php');
+   return;
+}
+
+// delete project
+if(isset($_POST['delete_project'])){
+    $project->delete_project($_POST['delete_project']);
+    header('location: index.php');
+    return;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php

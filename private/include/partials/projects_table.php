@@ -45,8 +45,9 @@
                         </div>
                         <p class='full h-con ha-center va-center'>$progress%</p>
                     </td>
-                    <td><form class='full' method='post'>
-                            <button id='view-project-btn' name='project_id' value='$project_id'>View</button>
+                    <td><form class='full h-con' method='post'>
+                            <button class='view-project-btn' name='project_id' value='$project_id'>View</button>
+                            <button class='delete-project-btn' name='delete_project' value='$project_id'>Delete</button>
                         </form>
                     </td>
                     </tr>";
