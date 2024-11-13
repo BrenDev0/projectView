@@ -134,7 +134,6 @@ require '../private/include/partials/html_head.php';
     const notes = JSON.parse(notesJson);
     const checklistData = JSON.parse('<?=$checklist_data?>')
     const tab = JSON.parse('<?=$tab?>');
-    console.log(tab)
 
     // view notes mobile
     const dashboard = document.getElementById('project-dashboard');
