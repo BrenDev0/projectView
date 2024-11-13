@@ -251,8 +251,12 @@ require '../private/include/partials/html_head.php';
 
     if(!tab || tab === 'notes'){
         dtViewNotes();
-    }else if(tab === 'checklist'){
+    } else if(tab === 'checklist'){
         dtViewChecklist();
+    } else if(tab === 'options'){
+        dtViewOptions();
+    } else if(tab === 'hours'){
+        dtViewHours();
     }
     
 </script>
