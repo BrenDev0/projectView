@@ -123,8 +123,8 @@ require '../private/include/partials/html_head.php';
                         <button name="save_notes" id="save-notes">Save</button>
                     </div>
             </form>
+            <div id="options"></div>
         </div>
-        
     </div>
     </main>
 </body>
@@ -144,6 +144,7 @@ require '../private/include/partials/html_head.php';
     const checklist = document.getElementById('checklist');
     const hours = document.getElementById('hours-con');
     const mobileSelect = document.getElementById('mobile-select-con')
+    const options = document.getElementById('options');
 
     function viewNotes(){
         checklist.style.display = 'none';
@@ -180,6 +181,7 @@ require '../private/include/partials/html_head.php';
 
         checklist.style.display = 'none';
         hours.style.display = 'none';
+        options.style.display = 'none'
         notepad.style.display = 'flex';
         dtNotesBtn.className += ' dt-toolbar-selected';
         dtNotesBtn.style.borderLeft = 'none';
@@ -199,6 +201,7 @@ require '../private/include/partials/html_head.php';
 
         notepad.style.display = 'none';
         hours.style.display = 'none';
+        options.style.display = 'none';
         checklist.style.display = 'block';
         dtChecklistBtn.className += ' dt-toolbar-selected'
 
@@ -216,14 +219,35 @@ require '../private/include/partials/html_head.php';
         
         notepad.style.display = 'none';
         checklist.style.display = 'none';
+        options.style.display = 'none';
         hours.style.display = 'flex';
 
         dtHoursBtn.className += ' dt-toolbar-selected'
-        dtHoursBtn.style.borderRight = 'none'
         return; 
     }
 
     dtHoursBtn.addEventListener('click', dtViewHours);
+
+    //dt view options 
+    const dtOptionsBtn = document.getElementById('dt-options-btn')
+
+    function dtViewOptions(){
+        const buttons = document.getElementsByClassName('dt-toolbar-btn');
+        for(let i = 0; i < buttons.length; i++){
+            buttons[i].className = buttons[i].className.replace(' dt-toolbar-selected', '');
+        }
+
+        notepad.style.display = 'none';
+        hours.style.display = 'none';
+        checklist.style.display = 'none';
+        options.style.display = 'flex';
+        dtOptionsBtn.className += ' dt-toolbar-selected'
+        dtOptionsBtn.style.borderRight = 'none'
+
+        return;
+    }
+
+    dtOptionsBtn.addEventListener('click', dtViewOptions)
 
     if(!tab || tab === 'notes'){
         dtViewNotes();
