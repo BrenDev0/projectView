@@ -75,7 +75,5 @@ class User{
             return; 
         }
     }
-
-
 }
 ?>
