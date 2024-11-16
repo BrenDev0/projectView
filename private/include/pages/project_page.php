@@ -123,7 +123,17 @@ require '../private/include/partials/html_head.php';
                         <button name="save_notes" id="save-notes">Save</button>
                     </div>
             </form>
-            <div id="options"></div>
+            <div class="v-con" id="options">
+                <h2>Edit Component</h2>
+                <form class="v-con" id="edit-compontent">
+                    <input type="text">
+                    <input type="text">
+                    <div class="h-con">
+                        <button>Delete</button>
+                        <button>Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     </main>
