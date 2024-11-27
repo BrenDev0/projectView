@@ -14,7 +14,8 @@ $checklist_data = json_encode($checklist_class->get_user_checklist($_SESSION['ac
 if(isset($_SESSION['tab'])){
     $tab = json_encode($_SESSION['tab']);
 }else{
-    $tab = $_SESSION['tab'] = 'notes';
+    $auto_select = $_SESSION['tab'] = 'notes';
+    $tab = json_encode($auto_select);
 }
 
 // notes form
